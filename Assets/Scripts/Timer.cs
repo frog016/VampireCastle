@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Timer : MonoBehaviour
+public class Timer : SingletonObject<Timer>
 {
     [SerializeField] private float _maxTime;
     [SerializeField] private float _tickSpeed;
@@ -13,8 +13,9 @@ public class Timer : MonoBehaviour
     private float _currentTime;
     private bool _isActive;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         CurrentTime = _maxTime;
         OnTimerTickEvent = new UnityEvent();
         _isActive = true;
