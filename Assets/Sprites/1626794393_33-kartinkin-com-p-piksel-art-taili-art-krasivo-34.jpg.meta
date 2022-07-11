@@ -1,0 +1,516 @@
+fileFormatVersion: 2
+guid: 6c57ed2ccdd31a848bb90c6056d003bb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3150480604424122048
+    second: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_0
+  - first:
+      213: -6342255269569368978
+    second: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_1
+  - first:
+      213: -7890075804323946073
+    second: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_2
+  - first:
+      213: -6715615324005085722
+    second: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_3
+  - first:
+      213: -733941499451432220
+    second: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_4
+  - first:
+      213: 3094880741763783655
+    second: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_5
+  - first:
+      213: -9097084474324699589
+    second: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_6
+  - first:
+      213: -1372383758636819656
+    second: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_7
+  - first:
+      213: -3478805073353070960
+    second: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_8
+  - first:
+      213: 4664720671638850301
+    second: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_9
+  - first:
+      213: 5738794680585333122
+    second: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_10
+  - first:
+      213: -1817388223941171000
+    second: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_11
+  - first:
+      213: -6637030697616344522
+    second: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_12
+  - first:
+      213: -2940520500249765005
+    second: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_13
+  - first:
+      213: 1573313657090078279
+    second: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_14
+  - first:
+      213: -3993772243608346358
+    second: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 288
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 912
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ce2572fa61c8bb20800000000000000
+      internalID: 3150480604424122048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_1
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 914
+        width: 286
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ce77e5f68cbf7a0800000000000000
+      internalID: -6342255269569368978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_2
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 914
+        width: 286
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1ed500cd1d08290800000000000000
+      internalID: -7890075804323946073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_3
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 914
+        width: 286
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6edc18491775dc2a0800000000000000
+      internalID: -6715615324005085722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 606
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e2a747481480d5f0800000000000000
+      internalID: -733941499451432220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_5
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 614
+        width: 286
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eb170323a933fa20800000000000000
+      internalID: 3094880741763783655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_6
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 611
+        width: 286
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b36b7287ed9a0c180800000000000000
+      internalID: -9097084474324699589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_7
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 614
+        width: 286
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83bdfe22e3054fce0800000000000000
+      internalID: -1372383758636819656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 314
+        width: 286
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 096a6ff973dc8bfc0800000000000000
+      internalID: -3478805073353070960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_9
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 314
+        width: 286
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfa84717cba6cb040800000000000000
+      internalID: 4664720671638850301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_10
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 314
+        width: 286
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 289a0374b5b44af40800000000000000
+      internalID: 5738794680585333122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_11
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 314
+        width: 286
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c8220d0a0757c6e0800000000000000
+      internalID: -1817388223941171000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 286
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63af639beb784e3a0800000000000000
+      internalID: -6637030697616344522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_13
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 14
+        width: 286
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37bdbdf3f2c2137d0800000000000000
+      internalID: -2940520500249765005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_14
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 0
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 746ff137f6885d510800000000000000
+      internalID: 1573313657090078279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1626794393_33-kartinkin-com-p-piksel-art-taili-art-krasivo-34_15
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 14
+        width: 286
+        height: 286
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a01e8e9ed454398c0800000000000000
+      internalID: -3993772243608346358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
