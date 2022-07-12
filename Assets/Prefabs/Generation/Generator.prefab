@@ -52,18 +52,19 @@ MonoBehaviour:
     RootGameObject: {fileID: 0}
     Timeout: 10000
     RepeatModeOverride: 0
-    MinimumRoomDistance: 1
+    MinimumRoomDistance: 0
   PostProcessConfig:
     InitializeSharedTilemaps: 1
-    TilemapLayersStructure: 0
-    TilemapLayersHandler: {fileID: 0}
+    TilemapLayersStructure: 2
+    TilemapLayersHandler: {fileID: 11400000, guid: 66f37d09229de444c9662de3e7251b91, type: 2}
     TilemapLayersExample: {fileID: 0}
     TilemapMaterial: {fileID: 0}
     CopyTilesToSharedTilemaps: 1
     CenterGrid: 1
     DisableRoomTemplatesRenderers: 1
     DisableRoomTemplatesColliders: 1
-  CustomPostProcessTasks: []
+  CustomPostProcessTasks:
+  - {fileID: 11400000, guid: 47f4cb3a2d5dc304a8fa8602cfdbad59, type: 2}
   OtherConfig:
     UseRandomSeed: 1
     RandomGeneratorSeed: 0
