@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Linq;
 using Edgar.Unity;
 using UnityEngine;
@@ -33,9 +32,7 @@ public class InteractiveObjectsPostProcessing : DungeonGeneratorPostProcessingGr
 
     private bool IsPositionValid(WallPosition position)
     {
-        var a = Physics2D.OverlapPointAll(position.Position);
-        Debug.Log(a.Length);
-        return Physics2D.OverlapPoint(position.Position - position.WallDirection) == null;
+        return Physics2D.OverlapPoint(position.Position - position.WallDirection) == null && Physics2D.OverlapPointAll(position.Position).Length == 0;
     }
 
     private WallPosition FindSpawnPosition(Tilemap tilemap)
