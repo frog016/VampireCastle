@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using Edgar.Unity;
 using UnityEngine;
@@ -13,26 +14,29 @@ public class InteractiveObjectsPostProcessing : DungeonGeneratorPostProcessingGr
     {
         var tilemap = level.GetSharedTilemaps().Last();
 
+        var hashset = new HashSet<Vector2>();
         for (var i = 0; i < _windowsCount; i++)
-            SpawnInteractiveObject(tilemap, _windowPrefab);
+           SpawnInteractiveObject(tilemap, _windowPrefab, hashset).transform.SetParent(level.RootGameObject.transform);
     }
 
-    private void SpawnInteractiveObject(Tilemap tilemap, GameObject interactiveObject)
+    private GameObject SpawnInteractiveObject(Tilemap tilemap, GameObject interactiveObject, HashSet<Vector2> usedPositions)
     {
         var position = FindSpawnPosition(tilemap);
 
-        while (!IsPositionValid(position))
+        while (!IsPositionValid(tilemap, position) || usedPositions.Contains(position.Position))
             position = FindSpawnPosition(tilemap);
 
+        usedPositions.Add(position.Position);
         var rotation = Mathf.Abs(position.Position.x - tilemap.cellBounds.xMin) < 1e-4 ||
                        Mathf.Abs(position.Position.x - tilemap.cellBounds.xMax) < 1e-4
             ? Quaternion.Euler(0, 0, Mathf.Sign(position.Position.x) * 90) : Quaternion.identity;
-        Instantiate(interactiveObject, position.Position, rotation);
+        return Instantiate(interactiveObject, position.Position, rotation);
     }
 
-    private bool IsPositionValid(WallPosition position)
+    private bool IsPositionValid(Tilemap tilemap,WallPosition position)
     {
-        return Physics2D.OverlapPoint(position.Position - position.WallDirection) == null && Physics2D.OverlapPointAll(position.Position).Length == 0;
+        var cellPosition = tilemap.WorldToCell(position.Position - position.WallDirection);
+        return tilemap.GetTile(cellPosition) == null;
     }
 
     private WallPosition FindSpawnPosition(Tilemap tilemap)
@@ -43,14 +47,14 @@ public class InteractiveObjectsPostProcessing : DungeonGeneratorPostProcessingGr
         var position = new Vector2(
             UnityEngine.Random.Range(0, 2) == 0 ? bounds.xMin + cellSize / 2f : bounds.xMax - cellSize / 2f,
             UnityEngine.Random.Range(bounds.yMin + cellSize, bounds.yMax - cellSize) + cellSize / 2f);
-        var direction = Vector2.right * Mathf.Sign(position.x);
+        var direction = Vector2.right * Mathf.Sign(tilemap.LocalToWorld(position).x);
 
         if (UnityEngine.Random.Range(0, 2) == 1)
         {
             position = new Vector2(
                 UnityEngine.Random.Range(bounds.xMin + cellSize, bounds.xMax - cellSize) + cellSize / 2f,
                 UnityEngine.Random.Range(0, 2) == 0 ? bounds.yMin + cellSize / 2f : bounds.yMax - cellSize / 2f);
-            direction = Vector2.up * Mathf.Sign(position.y);
+            direction = Vector2.up * Mathf.Sign(tilemap.LocalToWorld(position).y);
         }
 
         return new WallPosition(direction, tilemap.LocalToWorld(position));
