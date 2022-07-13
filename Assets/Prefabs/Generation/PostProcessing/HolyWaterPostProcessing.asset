@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb05380f3a7768242aca72adebc51859, type: 3}
+  m_Name: HolyWaterPostProcessing
+  m_EditorClassIdentifier: 
+  _itemCount: 1
+  _itemPrefab: {fileID: 2956569248001539811, guid: 86594f3470877df4195858c8330d91fc, type: 3}
