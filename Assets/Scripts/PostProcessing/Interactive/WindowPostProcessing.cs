@@ -36,9 +36,7 @@ public class WindowPostProcessing : InteractiveObjectsPostProcessing
             position = FindSpawnPosition(tilemap);
 
         _usedPositions.Add(position.Position);
-        var rotation = Mathf.Abs(position.Position.x - tilemap.cellBounds.xMin) < 1e-4 ||
-                       Mathf.Abs(position.Position.x - tilemap.cellBounds.xMax) < 1e-4
-            ? Quaternion.Euler(0, 0, Mathf.Sign(position.Position.x) * 90) : Quaternion.identity;
+        var rotation = Quaternion.Euler(0, 0, Quaternion.LookRotation(position.WallDirection).eulerAngles.y);
         var window = Instantiate(interactiveObject, position.Position, rotation);
         window.GetComponent<Window>().OnWindowClosed.AddListener(() => GenerationManager.Instance.CurrentWindowsCount--);   
         return window;

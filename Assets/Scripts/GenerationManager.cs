@@ -1,6 +1,8 @@
 using System.Linq;
 using Edgar.Unity;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(DungeonGeneratorGrid2D))]
 public class GenerationManager : SingletonObject<GenerationManager>
@@ -9,7 +11,6 @@ public class GenerationManager : SingletonObject<GenerationManager>
     [SerializeField] private DifficultySettings _difficulty;
 
     public int CurrentLevel { get; set; }
-
     public int CurrentWindowsCount
     {
         get => _windowsCount;
@@ -21,6 +22,8 @@ public class GenerationManager : SingletonObject<GenerationManager>
         }
     }
 
+    public UnityEvent OnLevelGenerated { get; private set; }
+
     private int _windowsCount;
     private DifficultyParameter _currentDifficulty;
     private DungeonGeneratorGrid2D _generator;
@@ -29,6 +32,7 @@ public class GenerationManager : SingletonObject<GenerationManager>
     {
         base.Awake();
         _generator = GetComponent<DungeonGeneratorGrid2D>();
+        OnLevelGenerated = new UnityEvent();
     }
 
     private void Start()
@@ -39,15 +43,18 @@ public class GenerationManager : SingletonObject<GenerationManager>
     public void GenerateLevel()
     {
         CurrentLevel++;
+        Statistic.Instance.BestScore = Mathf.Max(CurrentLevel, Statistic.Instance.BestScore);
         ChangeGenerationParameters();
         var level = _generator.Generate() as DungeonGeneratorPayloadGrid2D;
         var startPosition = GetStartPosition(level.GeneratedLevel);
         MovePlayerInPosition(startPosition);
+        OnLevelGenerated.Invoke();
     }
 
     private void MovePlayerInPosition(Vector2 position)
     {
         _player.transform.position = position;
+        _player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 
     private Vector2 GetStartPosition(DungeonGeneratorLevelGrid2D level)

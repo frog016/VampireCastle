@@ -15,7 +15,17 @@ public abstract class InteractiveObjectsPostProcessing : DungeonGeneratorPostPro
 
     public override void Run(DungeonGeneratorLevelGrid2D level)
     {
-        _usedPositions ??= new HashSet<Vector2> { level.RoomInstances.Last().RoomTemplateInstance.GetComponentInChildren<StartPosition>().transform.position};
+        if (_usedPositions == null)
+        {
+            var position = level.RoomInstances.Last().RoomTemplateInstance.GetComponentInChildren<StartPosition>()
+                .transform.position;
+            _usedPositions = new HashSet<Vector2>
+            {
+                position,
+                position + Vector3.up,
+                position + Vector3.left
+            };
+        }
 
         for (var i = 0; i < _itemCount; i++)
             SpawnInteractiveObject(level.GetSharedTilemaps(), _itemPrefab).transform.SetParent(level.RootGameObject.transform);

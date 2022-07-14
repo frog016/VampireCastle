@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameResultHandler : MonoBehaviour
 {
@@ -13,6 +12,6 @@ public class GameResultHandler : MonoBehaviour
         if (Timer.Instance.CurrentTime > 0)
             return;
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        FindObjectOfType<GameOverPanel>(true).OpenPanel();
     }
 }
