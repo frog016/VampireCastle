@@ -18,5 +18,6 @@ public class Movement : MonoBehaviour
             return;
 
         _rigidbody.velocity = direction * _speed;
+        transform.rotation = Quaternion.Euler(0, Quaternion.FromToRotation(Vector3.right, direction).eulerAngles.y, 0);
     }
 }
