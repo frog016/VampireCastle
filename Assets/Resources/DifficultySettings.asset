@@ -33,3 +33,13 @@ MonoBehaviour:
     _hourglassCount: 2
     _holyWaterCount: 1
     _timerSpeed: 1.75
+  - _levelNumber: 15
+    _windowsCount: 4
+    _hourglassCount: 2
+    _holyWaterCount: 1
+    _timerSpeed: 2
+  - _levelNumber: 20
+    _windowsCount: 4
+    _hourglassCount: 2
+    _holyWaterCount: 2
+    _timerSpeed: 2.5
