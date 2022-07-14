@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemCount: 2
   _itemPrefab: {fileID: 2126076878622744184, guid: b5c8e8055ef06ac48b9b2612d81c1dee, type: 3}
+  _sideWindow: {fileID: 2126076878622744184, guid: 581ef5265e4f6ce4b99e84d13c006727, type: 3}

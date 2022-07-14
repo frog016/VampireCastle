@@ -6,6 +6,8 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(menuName = "Edgar/Post processing/Interactive Objects/Window", fileName = "WindowPostProcessing")]
 public class WindowPostProcessing : InteractiveObjectsPostProcessing
 {
+    [SerializeField] private GameObject _sideWindow;
+
     protected override WallPosition FindSpawnPosition(Tilemap tilemap)
     {
         var cellSize = tilemap.layoutGrid.cellSize.x; ;
@@ -36,7 +38,13 @@ public class WindowPostProcessing : InteractiveObjectsPostProcessing
             position = FindSpawnPosition(tilemap);
 
         _usedPositions.Add(position.Position);
-        var rotation = Quaternion.Euler(0, 0, Quaternion.LookRotation(position.WallDirection).eulerAngles.y);
+        var rotation = Quaternion.FromToRotation(Vector3.up, position.WallDirection);
+        if (rotation.eulerAngles.z % 180 != 0)
+        {
+            interactiveObject = _sideWindow;
+            rotation.eulerAngles += new Vector3(0, 0, 90);
+        }
+
         var window = Instantiate(interactiveObject, position.Position, rotation);
         window.GetComponent<Window>().OnWindowClosed.AddListener(() => GenerationManager.Instance.CurrentWindowsCount--);   
         return window;
