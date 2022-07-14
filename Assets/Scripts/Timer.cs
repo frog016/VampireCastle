@@ -7,6 +7,7 @@ public class Timer : SingletonObject<Timer>
     [SerializeField] private float _tickSpeed;
 
     public float CurrentTime { get => _currentTime; set => _currentTime = Mathf.Clamp(value, 0, _maxTime); }
+    public float TickSpeed { get => _tickSpeed; set => _tickSpeed = value; }
     public UnityEvent OnTimerTickEvent { get; private set; }
     public float MaxTime => _maxTime;
 

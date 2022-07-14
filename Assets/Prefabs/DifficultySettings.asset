@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e8c8d6da5bb61b4e8adb1070a5facc9, type: 3}
+  m_Name: DifficultySettings
+  m_EditorClassIdentifier: 
+  _parameters:
+  - _levelNumber: 1
+    _windowsCount: 1
+    _hourglassCount: 0
+    _holyWaterCount: 0
+    _timerSpeed: 1
+  - _levelNumber: 2
+    _windowsCount: 2
+    _hourglassCount: 1
+    _holyWaterCount: 0
+    _timerSpeed: 1.2
+  - _levelNumber: 5
+    _windowsCount: 3
+    _hourglassCount: 1
+    _holyWaterCount: 1
+    _timerSpeed: 1.5
+  - _levelNumber: 10
+    _windowsCount: 4
+    _hourglassCount: 2
+    _holyWaterCount: 1
+    _timerSpeed: 1.75

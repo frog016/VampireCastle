@@ -13,13 +13,13 @@ public class WindowPostProcessing : InteractiveObjectsPostProcessing
 
         var position = new Vector2(
             UnityEngine.Random.Range(0, 2) == 0 ? bounds.xMin + cellSize / 2f : bounds.xMax - cellSize / 2f,
-            UnityEngine.Random.Range(bounds.yMin + cellSize, bounds.yMax - cellSize) + cellSize / 2f);
+            UnityEngine.Random.Range(bounds.yMin + (int)cellSize, bounds.yMax - (int)cellSize) + cellSize / 2f);
         var direction = Vector2.right * Mathf.Sign(tilemap.LocalToWorld(position).x);
 
         if (UnityEngine.Random.Range(0, 2) == 1)
         {
             position = new Vector2(
-                UnityEngine.Random.Range(bounds.xMin + cellSize, bounds.xMax - cellSize) + cellSize / 2f,
+                UnityEngine.Random.Range(bounds.xMin + (int)cellSize, bounds.xMax - (int)cellSize) + cellSize / 2f,
                 UnityEngine.Random.Range(0, 2) == 0 ? bounds.yMin + cellSize / 2f : bounds.yMax - cellSize / 2f);
             direction = Vector2.up * Mathf.Sign(tilemap.LocalToWorld(position).y);
         }
@@ -39,6 +39,8 @@ public class WindowPostProcessing : InteractiveObjectsPostProcessing
         var rotation = Mathf.Abs(position.Position.x - tilemap.cellBounds.xMin) < 1e-4 ||
                        Mathf.Abs(position.Position.x - tilemap.cellBounds.xMax) < 1e-4
             ? Quaternion.Euler(0, 0, Mathf.Sign(position.Position.x) * 90) : Quaternion.identity;
-        return Instantiate(interactiveObject, position.Position, rotation);
+        var window = Instantiate(interactiveObject, position.Position, rotation);
+        window.GetComponent<Window>().OnWindowClosed.AddListener(() => GenerationManager.Instance.CurrentWindowsCount--);   
+        return window;
     }
 }
