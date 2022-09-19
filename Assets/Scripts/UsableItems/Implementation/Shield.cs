@@ -2,16 +2,15 @@ using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
-[Serializable]
 public class Shield : IUsableItem
 {
-    [SerializeField] private float _duration;
-
+    private float _duration;
     private readonly Character _character;
 
-    public Shield(Character character)
+    public Shield(Character character, Parameters parameters)
     {
         _character = character;
+        _duration = parameters.Duration;
     }
 
     public void Use()
@@ -24,5 +23,13 @@ public class Shield : IUsableItem
         _character.CanApplyDamage = false;
         await Task.Delay((int)(duration * 1000));
         _character.CanApplyDamage = true;
+    }
+
+    [Serializable]
+    public class Parameters
+    {
+        [SerializeField] private float _duration;
+
+        public float Duration => _duration;
     }
 }

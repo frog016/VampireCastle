@@ -1,11 +1,16 @@
 using UnityEngine;
+using Zenject;
 
 public class Character : MonoBehaviour
 {
     public bool CanApplyDamage { get; set; }
 
-    private void Awake()
+    private Timer _timer;
+
+    [Inject]
+    public void Initialize(Timer timer)
     {
+        _timer = timer;
         CanApplyDamage = true;
     }
 
@@ -14,11 +19,11 @@ public class Character : MonoBehaviour
         if (!CanApplyDamage)
             return;
 
-        Timer.Instance.CurrentTime -= damage;
+        _timer.CurrentTime -= damage;
     }
 
     public void ApplyHealth(float health)
     {
-        Timer.Instance.CurrentTime += health;
+        _timer.CurrentTime += health;
     }
 }

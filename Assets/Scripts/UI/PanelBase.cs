@@ -1,16 +1,24 @@
-using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using Zenject;
 
-public abstract class PanelBase : MonoBehaviour
+public abstract class PanelBase : TextChanger
 {
-    [SerializeField] protected Text _scoreText;
+    private string _startText;
+    private MapGenerator _generation;
 
     protected virtual void Start()
     {
-        ChangeTextValue(_scoreText);
-        GenerationManager.Instance.OnLevelGenerated.AddListener(() => ChangeTextValue(_scoreText));
+        _startText = _text.text;
+
+        ChangeText(_generation.CurrentLevel);
+        _generation.OnLevelGenerated += ChangeText;
         ClosePanel();
+    }
+
+    [Inject]
+    public void Initialize(MapGenerator generation)
+    {
+        _generation = generation;
     }
 
     public virtual void OpenPanel()
@@ -25,14 +33,14 @@ public abstract class PanelBase : MonoBehaviour
         PauseManager.Continue();
     }
 
+    public override void ChangeText(string text)
+    {
+        base.ChangeText(_startText + text);
+    }
+
     public void ReturnToMenu()
     {
         PauseManager.Continue();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-    }
-
-    protected void ChangeTextValue(Text text)
-    {
-        text.text = "Текущий счет: " + GenerationManager.Instance.CurrentLevel;
     }
 }

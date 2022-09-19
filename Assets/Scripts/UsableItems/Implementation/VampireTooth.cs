@@ -3,8 +3,15 @@ using System;
 [Serializable]
 public class VampireTooth : IUsableItem
 {
+    private readonly Timer _timer;
+
+    public VampireTooth(Timer timer)
+    {
+        _timer = timer;
+    }
+
     public void Use()
     {
-        Timer.Instance.RestartTimer();
+        _timer.RestartTimer();
     }
 }

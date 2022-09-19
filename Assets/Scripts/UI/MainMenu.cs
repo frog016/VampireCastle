@@ -1,14 +1,10 @@
-using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : TextChanger
 {
-    [SerializeField] private Text _bestScoreText;
-
     private void Start()
     {
-        _bestScoreText.text = "Лучший счет: " + Statistic.Instance.BestScore;
+        ChangeText("Лучший счет: " + Statistic.Instance.BestScore);
     }
 
     public void StartGame()

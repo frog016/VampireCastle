@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Edgar.Unity;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -46,7 +47,8 @@ public class WindowPostProcessing : InteractiveObjectsPostProcessing
         }
 
         var window = Instantiate(interactiveObject, position.Position, rotation);
-        window.GetComponent<Window>().OnWindowClosed.AddListener(() => GenerationManager.Instance.CurrentWindowsCount--);   
+        Window.Count++;
+
         return window;
     }
 }

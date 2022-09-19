@@ -1,14 +1,13 @@
 using System;
 using System.Linq;
-using UnityEngine;
 
-public class ItemBag : MonoBehaviour
+public class ItemBag
 {
-    private IUsableItem[] _items;
+    private readonly IUsableItem[] _items;
 
-    private void Awake()
+    public ItemBag(IUsableItem[] items)
     {
-        _items = GetComponentsInChildren<IUsableItem>();
+        _items = items;
     }
 
     public void UseItem<T>() where T : IUsableItem

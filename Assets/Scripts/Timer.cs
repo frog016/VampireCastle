@@ -1,24 +1,23 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Timer : SingletonObject<Timer>
+public class Timer : MonoBehaviour
 {
     [SerializeField] private float _maxTime;
     [SerializeField] private float _tickSpeed;
 
+    public event Action OnTimerTickEvent;
     public float CurrentTime { get => _currentTime; set => _currentTime = Mathf.Clamp(value, 0, _maxTime); }
     public float TickSpeed { get => _tickSpeed; set => _tickSpeed = value; }
-    public UnityEvent OnTimerTickEvent { get; private set; }
     public float MaxTime => _maxTime;
 
     private float _currentTime;
     private bool _isActive;
 
-    protected override void Awake()
+    private void Awake()
     {
-        base.Awake();
         CurrentTime = _maxTime;
-        OnTimerTickEvent = new UnityEvent();
         _isActive = true;
     }
 
@@ -28,7 +27,7 @@ public class Timer : SingletonObject<Timer>
             return;
 
         CurrentTime -= _tickSpeed * Time.deltaTime;
-        OnTimerTickEvent.Invoke();
+        OnTimerTickEvent?.Invoke();
 
         if (CurrentTime < 1e-5)
             StopTimer();

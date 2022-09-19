@@ -1,14 +1,10 @@
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Window : InteractiveObject
 {
-    public UnityEvent OnWindowClosed { get; private set; }
-
-    private void Awake()
-    {
-        OnWindowClosed = new UnityEvent();
-    }
+    public static int Count;
+    public static event Action OnWindowClosedEvent;
 
     protected override void Interact(GameObject triggeredObject)
     {
@@ -19,7 +15,8 @@ public class Window : InteractiveObject
 
     private void CloseWindow()
     {
-        OnWindowClosed.Invoke();
+        Count--;
+        OnWindowClosedEvent?.Invoke();
         var sprites = GetComponentsInChildren<SpriteRenderer>(true);
         sprites[0].gameObject.SetActive(false);
         sprites[1].gameObject.SetActive(true);

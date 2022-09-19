@@ -182,6 +182,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7991296168757092434, guid: 839f7de1393d7d746b39a94c1cce1774, type: 3}
+      propertyPath: _components.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7991296168757092434, guid: 839f7de1393d7d746b39a94c1cce1774, type: 3}
+      propertyPath: _components.Array.data[1]
+      value: 
+      objectReference: {fileID: 1575251027}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 839f7de1393d7d746b39a94c1cce1774, type: 3}
 --- !u!1 &79169447
@@ -635,7 +643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa7bc09b1931fb4c83dfe85baf94df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreText: {fileID: 1132979727}
+  _text: {fileID: 1132979727}
   _bestScoreText: {fileID: 1122997181}
 --- !u!1 &506753750
 GameObject:
@@ -1769,8 +1777,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0422\u0435\u043A\u0443\u0449\u0438\u0439 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442:
-    2"
+  m_Text: "\u0422\u0435\u043A\u0443\u0449\u0438\u0439 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442: "
 --- !u!222 &576964190
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2075,6 +2082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1487fc17fce972d4f857881ff8553b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _text: {fileID: 79169449}
 --- !u!1 &877005786
 GameObject:
   m_ObjectHideFlags: 0
@@ -2183,7 +2191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89715ad69b973a14899afa2c6730b30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scriptableObjectInstallers: []
+  _scriptableObjectInstallers:
+  - {fileID: 11400000, guid: c2eeec6082bf48d4e9bd36edc07857cc, type: 2}
+  - {fileID: 11400000, guid: db1b37b2f7c0f474289802c845cc799b, type: 2}
   _monoInstallers: []
   _installerPrefabs: []
   _autoRun: 1
@@ -2365,8 +2375,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041B\u0443\u0447\u0448\u0438\u0439 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442:
-    2"
+  m_Text: "\u041B\u0443\u0447\u0448\u0438\u0439 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442: "
 --- !u!222 &1122997182
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2445,8 +2454,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0422\u0435\u043A\u0443\u0449\u0438\u0439 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442:
-    2"
+  m_Text: "\u0422\u0435\u043A\u0443\u0449\u0438\u0439 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442: "
 --- !u!222 &1132979728
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2818,7 +2826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0edf52602a77e0d4c96be8ef88824b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreText: {fileID: 576964189}
+  _text: {fileID: 576964189}
 --- !u!1 &1319188318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2869,10 +2877,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7d2ea125fba46419b49c522d9136ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _text: {fileID: 877005788}
   _startColor: {r: 0.15294118, g: 0.92941177, b: 0.50980395, a: 1}
   _endColor: {r: 1, g: 0.16470589, b: 0.21568628, a: 1}
   _frontTransform: {fileID: 1569266914}
-  _timerText: {fileID: 877005788}
 --- !u!1 &1569266913
 GameObject:
   m_ObjectHideFlags: 0
@@ -2948,6 +2956,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569266913}
   m_CullTransparentMesh: 1
+--- !u!114 &1575251027 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5700496695051012984, guid: 839f7de1393d7d746b39a94c1cce1774, type: 3}
+  m_PrefabInstance: {fileID: 71730799}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11725bdbb93631241b38951f78cae60c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1592687228
 GameObject:
   m_ObjectHideFlags: 0

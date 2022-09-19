@@ -1,17 +1,27 @@
 using UnityEngine;
+using Zenject;
 
 public class GameResultHandler : MonoBehaviour
 {
-    private void Start()
+    private Timer _timer;
+
+    [Inject]
+    public void Initialize(Timer timer)
     {
-        Timer.Instance.OnTimerTickEvent.AddListener(GameOver);
+        _timer = timer;
+        _timer.OnTimerTickEvent += GameOver;
     }
 
     private void GameOver()
     {
-        if (Timer.Instance.CurrentTime > 0)
+        if (_timer.CurrentTime > 0)
             return;
 
         FindObjectOfType<GameOverPanel>(true).OpenPanel();
+    }
+
+    private void OnDestroy()
+    {
+        _timer.OnTimerTickEvent -= GameOver;
     }
 }
