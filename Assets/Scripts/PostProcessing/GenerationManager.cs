@@ -18,7 +18,7 @@ public class GenerationManager : SingletonObject<GenerationManager>
         {
             _windowsCount = value;
             if (_windowsCount == 0)
-                GenerateLevel();
+                GenerateLevel(++CurrentLevel);
         }
     }
 
@@ -37,16 +37,16 @@ public class GenerationManager : SingletonObject<GenerationManager>
 
     private void Start()
     {
-        GenerateLevel();
+        GenerateLevel(++CurrentLevel);
     }
-
-    public void GenerateLevel()
+    
+    public void GenerateLevel(int level)
     {
-        CurrentLevel++;
-        Statistic.Instance.BestScore = Mathf.Max(CurrentLevel, Statistic.Instance.BestScore);
+        CurrentLevel = level;
+        Statistic.Instance.BestScore = Mathf.Max(level, Statistic.Instance.BestScore);
         ChangeGenerationParameters();
-        var level = _generator.Generate() as DungeonGeneratorPayloadGrid2D;
-        var startPosition = GetStartPosition(level.GeneratedLevel);
+        var generatedLevel = _generator.Generate() as DungeonGeneratorPayloadGrid2D;
+        var startPosition = GetStartPosition(generatedLevel.GeneratedLevel);
         MovePlayerInPosition(startPosition);
         OnLevelGenerated.Invoke();
     }

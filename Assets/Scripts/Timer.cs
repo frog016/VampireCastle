@@ -43,4 +43,9 @@ public class Timer : SingletonObject<Timer>
     {
         _isActive = false;
     }
+
+    public void RestartTimer()
+    {
+        CurrentTime = MaxTime;
+    }
 }

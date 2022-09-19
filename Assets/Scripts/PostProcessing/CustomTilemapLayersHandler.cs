@@ -32,7 +32,7 @@ public class CustomTilemapLayersHandler : TilemapLayersHandlerBaseGrid2D
         tilemapCollider2D.usedByComposite = true;
 
         var compositeCollider2d = tilemapGameObject.AddComponent<CompositeCollider2D>();
-        compositeCollider2d.geometryType = CompositeCollider2D.GeometryType.Polygons;
+        compositeCollider2d.geometryType = CompositeCollider2D.GeometryType.Outlines;
         compositeCollider2d.isTrigger = isTrigger;
 
         tilemapGameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;

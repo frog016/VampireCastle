@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
@@ -7,12 +8,19 @@ public abstract class InteractiveObject : MonoBehaviour
 
     protected virtual void Interact(GameObject triggeredObject)
     {
-        Timer.Instance.CurrentTime += _additionalTime;
+        var character = triggeredObject.GetComponent<Character>();
+        Action<float> action;
+        if (_additionalTime > 0)
+            action = character.ApplyHealth;
+        else
+            action = character.ApplyDamage;
+
+        action(Mathf.Abs(_additionalTime));
     }
 
     private void OnTriggerEnter2D(Collider2D otherCollider)
     {
-        if (otherCollider.GetComponent<CharacterController>() == null)
+        if (otherCollider.GetComponent<Character>() == null)
             return;
 
         Interact(otherCollider.gameObject);
