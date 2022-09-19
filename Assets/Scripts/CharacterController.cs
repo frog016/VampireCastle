@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Movement))]
 public class CharacterController : MonoBehaviour
 {
+    private Vector3 _direction;
     private Movement _movement;
 
     private void Awake()
@@ -12,12 +13,15 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
-        var direction = GetDirection().normalized;
-        if (direction.magnitude > 1e-3)
-            _movement.TryMove(direction);
+        _direction = GetDirection().normalized;
     }
 
-    private Vector2 GetDirection()
+    private void FixedUpdate()
+    {
+        _movement.TryMove(_direction);
+    }
+
+    private static Vector2 GetDirection()
     {
         var x = Input.GetAxis("Horizontal");
         var y = Input.GetAxis("Vertical");

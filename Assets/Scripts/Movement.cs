@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
 
     public void TryMove(Vector2 direction)
     {
-        if (_rigidbody.velocity.magnitude > 1e-3)
+        if (_rigidbody.velocity.magnitude > 1e-2)
             return;
 
         _rigidbody.velocity = direction * _speed;
