@@ -1,7 +1,9 @@
+using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class Shield : MonoBehaviour, IUsableItem
+[Serializable]
+public class Shield : IUsableItem
 {
     [SerializeField] private float _duration;
 

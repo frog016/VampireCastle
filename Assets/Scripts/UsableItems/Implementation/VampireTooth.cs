@@ -1,6 +1,7 @@
-using UnityEngine;
+using System;
 
-public class VampireTooth : MonoBehaviour, IUsableItem
+[Serializable]
+public class VampireTooth : IUsableItem
 {
     public void Use()
     {

@@ -1,6 +1,8 @@
+using System;
 using UnityEngine;
 
-public class LevelBuster : MonoBehaviour, IUsableItem
+[Serializable]
+public class LevelBuster : IUsableItem
 {
     [SerializeField] private int _limitLevel;
     [SerializeField] private int _levelBustCount;

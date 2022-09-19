@@ -1,7 +1,9 @@
+using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class TimeStopper : MonoBehaviour, IUsableItem
+[Serializable]
+public class TimeStopper : IUsableItem
 {
     [SerializeField] private float _duration;
 
