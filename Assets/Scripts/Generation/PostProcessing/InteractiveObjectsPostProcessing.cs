@@ -31,7 +31,7 @@ public abstract class InteractiveObjectsPostProcessing : DungeonGeneratorPostPro
             SpawnInteractiveObject(level.GetSharedTilemaps(), _itemPrefab).transform.SetParent(level.RootGameObject.transform);
     }
 
-    protected abstract GameObject SpawnInteractiveObject(List<Tilemap> tilemap, GameObject interactiveObject);
+    protected abstract GameObject SpawnInteractiveObject(List<Tilemap> tilemaps, GameObject interactiveObject);
 
     protected abstract WallPosition FindSpawnPosition(Tilemap tilemap);
 

@@ -7,15 +7,15 @@ using Zenject;
 [RequireComponent(typeof(DungeonGeneratorGrid2D))]
 public class MapGenerator : MonoBehaviour
 {
-    [SerializeField] private DifficultySettings _difficulty;
+    [SerializeField] private int _numberLevelsToChangeGenerator;
 
     public int CurrentLevel { get; private set; }
     public event Action<int> OnLevelGenerated;
 
-    private Timer _timer;
     private Character _character;
     private DungeonGeneratorGrid2D _generator;
     private ConditionHandler _conditionHandler;
+    private GeneratorProvider _provider;
 
     private void Start()
     {
@@ -24,18 +24,19 @@ public class MapGenerator : MonoBehaviour
     }
 
     [Inject]
-    public void Initialize(Timer timer, Character character, ConditionHandler conditionHandler)
+    public void Initialize(Character character, ConditionHandler conditionHandler, GeneratorProvider provider)
     {
-        _timer = timer;
         _character = character;
         _conditionHandler = conditionHandler;
         _conditionHandler.OnAllConditionsAreMet(GenerateNextLevel);
+
+        _provider = provider;
     }
 
     public void GenerateLevel(int level)
     {
         CurrentLevel = level;
-        ChangeGenerationParameters();
+        TryChangeGenerator();
 
         var generatedLevel = _generator.Generate() as DungeonGeneratorPayloadGrid2D;
         var startPosition = GetStartPosition(generatedLevel.GeneratedLevel);
@@ -49,6 +50,14 @@ public class MapGenerator : MonoBehaviour
         GenerateLevel(CurrentLevel + 1);
     }
 
+    private void TryChangeGenerator()
+    {
+        if ((CurrentLevel - 1)% _numberLevelsToChangeGenerator != 0 || CurrentLevel == 0)
+            return;
+
+        _provider.ConfigureGenerator(_generator);
+    }
+
     private void MovePlayerInPosition(Vector2 position)
     {
         _character.transform.position = position;
@@ -59,26 +68,5 @@ public class MapGenerator : MonoBehaviour
     {
         return level.RoomInstances.Last().RoomTemplateInstance.GetComponentInChildren<StartPosition>().transform
             .position;
-    }
-
-    private void ChangeGenerationParameters()
-    {
-        var currentDifficulty = _difficulty.GetDifficultyParameter(CurrentLevel);
-        if (currentDifficulty == null)
-            return;
-
-        var tasks = _generator.CustomPostProcessTasks.Cast<InteractiveObjectsPostProcessing>().ToList();
-        foreach (var task in tasks)
-        {
-            var type = task.GetType();
-            if (type == typeof(WindowPostProcessing))
-                task.ItemsCount = currentDifficulty.WindowsCount;
-            else if (type == typeof(HourglassPostProcessing))
-                task.ItemsCount = currentDifficulty.HourglassCount;
-            else if (type == typeof(HolyWaterPostProcessing))
-                task.ItemsCount = currentDifficulty.HolyWaterCount;
-        }
-
-        _timer.TickSpeed = currentDifficulty.TimerSpeed;
     }
 }
