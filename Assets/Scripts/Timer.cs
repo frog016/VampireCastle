@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Timer : MonoBehaviour
 {
@@ -23,10 +22,9 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
-        if (!_isActive)
-            return;
+        var delta = _isActive ? Time.deltaTime : 0;
 
-        CurrentTime -= _tickSpeed * Time.deltaTime;
+        CurrentTime -= _tickSpeed * delta;
         OnTimerTickEvent?.Invoke();
 
         if (CurrentTime < 1e-5)
