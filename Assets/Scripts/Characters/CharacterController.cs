@@ -1,14 +1,14 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Movement))]
+[RequireComponent(typeof(SlidingMovement))]
 public class CharacterController : MonoBehaviour
 {
     private Vector3 _direction;
-    private Movement _movement;
+    private IMovement _movement;
 
     private void Awake()
     {
-        _movement = GetComponent<Movement>();
+        _movement = GetComponent<IMovement>();
     }
 
     private void Update()
@@ -18,7 +18,7 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _movement.TryMove(_direction);
+        _movement.Move(_direction);
     }
 
     private static Vector2 GetDirection()

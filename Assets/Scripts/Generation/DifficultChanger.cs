@@ -1,6 +1,7 @@
 using System.Linq;
 using Edgar.Unity;
 using UnityEngine;
+using Zenject;
 
 public class DifficultChanger : MonoBehaviour
 {
@@ -9,11 +10,15 @@ public class DifficultChanger : MonoBehaviour
     private MapGenerator _generator;
     private Timer _timer;
 
-    public void Initialize(MapGenerator generator, Timer timer)
+    private void Awake()
     {
-        _generator = generator;
+        _generator = GetComponent<MapGenerator>();
         _generator.OnLevelGenerated += ChangeDifficultParameters;
+    }
 
+    [Inject]
+    public void Initialize(Timer timer)
+    {
         _timer = timer;
     }
 

@@ -1,9 +1,11 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Movement : MonoBehaviour
+public class SlidingMovement : MonoBehaviour, IMovement
 {
     [SerializeField] private float _speed;
+
+    public bool IsMoving => _rigidbody.velocity.magnitude > 1e-2;
 
     private Rigidbody2D _rigidbody;
 
@@ -12,9 +14,9 @@ public class Movement : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    public void TryMove(Vector2 direction)
+    public void Move(Vector2 direction)
     {
-        if (_rigidbody.velocity.magnitude > 1e-2)
+        if (IsMoving)
             return;
 
         _rigidbody.velocity = direction * _speed;

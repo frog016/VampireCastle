@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: -4335789300993382124}
   - component: {fileID: 6114918640048070904}
   - component: {fileID: 356236718735699026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,6 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _components:
   - {fileID: 5834794801900284243}
+  - {fileID: 8906344751240183809}
   _identifier: 
   _useSceneContext: 0
   _context: {fileID: 0}
