@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Window : InteractiveObject
+public class Window : InteractiveTime
 {
     public static int Count;
     public static event Action OnWindowClosedEvent;

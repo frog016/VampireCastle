@@ -10,7 +10,7 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private int _numberLevelsToChangeGenerator;
 
     public int CurrentLevel { get; private set; }
-    public event Action<int> OnLevelGenerated;
+    public event Action<int> OnLevelPreGenerated;
 
     private Character _character;
     private DungeonGeneratorGrid2D _generator;
@@ -38,11 +38,10 @@ public class MapGenerator : MonoBehaviour
         CurrentLevel = level;
         TryChangeGenerator();
 
+        OnLevelPreGenerated?.Invoke(CurrentLevel);
         var generatedLevel = _generator.Generate() as DungeonGeneratorPayloadGrid2D;
         var startPosition = GetStartPosition(generatedLevel.GeneratedLevel);
         MovePlayerInPosition(startPosition);
-
-        OnLevelGenerated?.Invoke(CurrentLevel);
     }
 
     public void GenerateNextLevel()

@@ -1,3 +1,3 @@
-public class Ghost : InteractiveObject
+public class Ghost : InteractiveTime
 {
 }

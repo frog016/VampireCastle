@@ -11,7 +11,7 @@ public abstract class PanelBase : TextChanger
         _startText = _text.text;
 
         ChangeText(_generation.CurrentLevel);
-        _generation.OnLevelGenerated += ChangeText;
+        _generation.OnLevelPreGenerated += ChangeText;
         ClosePanel();
     }
 

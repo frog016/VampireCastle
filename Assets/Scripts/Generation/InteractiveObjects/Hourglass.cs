@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Hourglass : InteractiveObject
+public class Hourglass : InteractiveTime
 {
     protected override void Interact(GameObject triggeredObject)
     {

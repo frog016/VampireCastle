@@ -13,7 +13,7 @@ public class DifficultChanger : MonoBehaviour
     private void Awake()
     {
         _generator = GetComponent<MapGenerator>();
-        _generator.OnLevelGenerated += ChangeDifficultParameters;
+        _generator.OnLevelPreGenerated += ChangeDifficultParameters;
     }
 
     [Inject]
@@ -50,6 +50,6 @@ public class DifficultChanger : MonoBehaviour
     private void OnDestroy()
     {
         if (_generator != null)
-            _generator.OnLevelGenerated -= ChangeDifficultParameters;
+            _generator.OnLevelPreGenerated -= ChangeDifficultParameters;
     }
 }

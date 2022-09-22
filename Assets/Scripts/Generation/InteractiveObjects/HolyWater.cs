@@ -1,3 +1,3 @@
-public class HolyWater : InteractiveObject
+public class HolyWater : InteractiveTime
 {
 }

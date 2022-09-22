@@ -10,7 +10,7 @@ public class LevelNumber : TextChanger
         _text = GetComponentInChildren<Text>();
 
         ChangeText(_generation.CurrentLevel);
-        _generation.OnLevelGenerated += ChangeText;
+        _generation.OnLevelPreGenerated += ChangeText;
     }
 
     [Inject]
@@ -21,6 +21,6 @@ public class LevelNumber : TextChanger
 
     private void OnDestroy()
     {
-        _generation.OnLevelGenerated -= ChangeText;
+        _generation.OnLevelPreGenerated -= ChangeText;
     }
 }
