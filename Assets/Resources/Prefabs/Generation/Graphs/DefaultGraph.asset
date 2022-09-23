@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8994794166430204865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Position: {x: 320, y: 528}
+  Name: Left part
+  IndividualRoomTemplates:
+  - {fileID: 2966564906174274022, guid: f8837a2490dac4e499c9043de14a1661, type: 3}
+  - {fileID: 2966564906174274022, guid: 37cb6c45bbc03894fba535ae88b152e5, type: 3}
+  - {fileID: 2966564906174274022, guid: eb455c0e67d023742985a74c2a38ec8b, type: 3}
+  - {fileID: 2966564906174274022, guid: 1b53a5c4fe11cf74db81dc4c729966c4, type: 3}
+  - {fileID: 2966564906174274022, guid: 138239be255808f4ba0855c453b9258e, type: 3}
+  RoomTemplateSets: []
+--- !u!114 &-7733636702062489313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8074dc491ddc34f4e83332d9eae76980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Position: {x: 480, y: 528}
+  Name: Right part
+  IndividualRoomTemplates:
+  - {fileID: 2966564906174274022, guid: c9e8c9c120163fd44b04bebf9c81cfd3, type: 3}
+  - {fileID: 2966564906174274022, guid: 7e7d2032e83dad640b9d61d65a3b12f2, type: 3}
+  - {fileID: 2966564906174274022, guid: b57dfeb376a556f4a8799d9cbdfc9cf4, type: 3}
+  - {fileID: 2966564906174274022, guid: 30cd569541f50d04e87674b7b506cb51, type: 3}
+  - {fileID: 2966564906174274022, guid: fa8572fec2ff50348bdc6f9b2b57f2e5, type: 3}
+  RoomTemplateSets: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8400baee4cafd34091c865089a167b2, type: 3}
+  m_Name: DefaultGraph
+  m_EditorClassIdentifier: 
+  Connections:
+  - {fileID: 4720433088880365688}
+  CorridorIndividualRoomTemplates: []
+  CorridorRoomTemplateSets: []
+  DefaultIndividualRoomTemplates: []
+  DefaultRoomTemplateSets: []
+  Rooms:
+  - {fileID: -7733636702062489313}
+  - {fileID: -8994794166430204865}
+  EditorData:
+    PanOffset: {x: -2.7147644, y: -237.32945}
+    Zoom: 1.3923446
+  RoomType: Edgar.Unity.Room
+  ConnectionType: Edgar.Unity.Connection
+--- !u!114 &4720433088880365688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f692f83df7c1b5468af64edd22287dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  From: {fileID: -8994794166430204865}
+  To: {fileID: -7733636702062489313}

@@ -7,6 +7,7 @@ public class PressurePlate : InteractiveObject
     protected override void Interact(GameObject triggeredObject)
     {
         ActivateTargetObject();
+        Destroy(this);
     }
 
     private void ActivateTargetObject()
