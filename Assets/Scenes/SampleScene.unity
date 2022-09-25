@@ -2187,6 +2187,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c2eeec6082bf48d4e9bd36edc07857cc, type: 2}
   - {fileID: 11400000, guid: db1b37b2f7c0f474289802c845cc799b, type: 2}
   - {fileID: 11400000, guid: 52407b35026477d4fb05181835752f40, type: 2}
+  - {fileID: 11400000, guid: a1932d2c97b0c6344a10bee18f6d0f5d, type: 2}
   _monoInstallers: []
   _installerPrefabs: []
   _autoRun: 1

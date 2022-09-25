@@ -9,6 +9,10 @@ public class WalletInstaller : ScriptableObjectInstaller<WalletInstaller>
     public override void InstallBindings()
     {
         foreach (var wallet in _wallets)
-            Container.BindInstance(wallet);
+            Container
+                .Bind(wallet.GetType())
+                .FromScriptableObject(wallet)
+                .AsSingle();
+        
     }
 }
