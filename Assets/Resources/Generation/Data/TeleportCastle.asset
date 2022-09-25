@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eb4d867c09507d42b90d4528c3d2094, type: 3}
+  m_Name: TeleportCastle
+  m_EditorClassIdentifier: 
+  _graphConfig:
+    LevelGraph: {fileID: 11400000, guid: 72e6eb51ac1c11c4e9d2da804df8adf3, type: 2}
+    UseCorridors: 0
+  _postProcessingTasks:
+  - {fileID: 11400000, guid: 9f0d04aacddc1ea4e803e7abe6ca0f72, type: 2}
+  - {fileID: 11400000, guid: f65c35c4be922d94f81a37627d4023a3, type: 2}
+  - {fileID: 11400000, guid: 82157f7d47b2b6944a24f16c73728880, type: 2}
