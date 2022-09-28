@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts.Pathfind;
+using Assets.Scripts.Pathfind.Walker;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
