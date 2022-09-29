@@ -30,6 +30,7 @@ public class DifficultChanger : MonoBehaviour
 
         var tasks = _generator
             .GetComponent<DungeonGeneratorGrid2D>().CustomPostProcessTasks
+            .Where(task => task is InteractiveObjectsPostProcessing)
             .Cast<InteractiveObjectsPostProcessing>()
             .ToList();
 

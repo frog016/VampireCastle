@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 
 public class PathfindingTest : MonoBehaviour
 {
-    [SerializeField] private Tilemap _tilemap;
+    [SerializeField] private Tilemap[] _tilemaps;
 
     private void Awake()
     {
@@ -15,8 +15,8 @@ public class PathfindingTest : MonoBehaviour
 
     private void Test()
     {
-        var finder = new TilemapPathfinder(_tilemap, new SlideWalker(_tilemap));
-        var path= finder.FindPath();
+        var finder = new TilemapPathfinder(new SlideWalker());
+        var path= finder.FindPath(_tilemaps);
 
         Debug.Log(string.Join("", path));
     }

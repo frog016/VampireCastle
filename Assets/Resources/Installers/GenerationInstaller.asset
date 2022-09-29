@@ -13,3 +13,10 @@ MonoBehaviour:
   m_Name: GenerationInstaller
   m_EditorClassIdentifier: 
   _generatorProvider: {fileID: 11400000, guid: bdfa4121fafa7a344bee2a442d18284d, type: 2}
+  _postProcessingTasks:
+  - {fileID: 11400000, guid: 17e581bcd28977c45868562b25ffa315, type: 2}
+  - {fileID: 11400000, guid: 9f0d04aacddc1ea4e803e7abe6ca0f72, type: 2}
+  - {fileID: 11400000, guid: 82157f7d47b2b6944a24f16c73728880, type: 2}
+  - {fileID: 11400000, guid: f65c35c4be922d94f81a37627d4023a3, type: 2}
+  - {fileID: 11400000, guid: 047283da19e802a40b399509397bc650, type: 2}
+  - {fileID: 11400000, guid: 10b39cf126ece674f85dd92e758565ff, type: 2}

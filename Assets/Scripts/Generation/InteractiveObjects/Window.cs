@@ -6,6 +6,11 @@ public class Window : InteractiveTime
     public static int Count;
     public static event Action OnWindowClosedEvent;
 
+    private void Awake()
+    {
+        Count++;
+    }
+
     protected override void Interact(GameObject triggeredObject)
     {
         base.Interact(triggeredObject);

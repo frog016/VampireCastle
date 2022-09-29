@@ -8,14 +8,24 @@ public class GeneratorProvider : ScriptableObject, IGeneratorProvider<DungeonGen
 {
     [SerializeField] private GenerationData[] _mapDataPool;
 
+    private GenerationData _currentData;
     private readonly HashSet<GenerationData> _usedMaps = new HashSet<GenerationData>();
 
     public void ConfigureGenerator(DungeonGeneratorGrid2D generator)
     {
-        var data = GetGenerationData();
+        _currentData = GetGenerationData();
 
-        generator.FixedLevelGraphConfig = data.GraphConfig;
-        generator.CustomPostProcessTasks = data.PostProcessingTasks.ToList();
+        generator.FixedLevelGraphConfig = _currentData.GraphConfig;
+        generator.CustomPostProcessTasks.AddRange(_currentData.PostProcessingTasks);
+    }
+
+    public void UnConfigureGenerator(DungeonGeneratorGrid2D generator)
+    {
+        if (_currentData?.PostProcessingTasks.Length == 0)
+            return;
+
+        var length = generator.CustomPostProcessTasks.Count;
+        generator.CustomPostProcessTasks.RemoveAt(length - _currentData.PostProcessingTasks.Length);
     }
 
     public GenerationData GetGenerationData()

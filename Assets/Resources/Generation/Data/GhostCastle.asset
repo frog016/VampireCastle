@@ -16,8 +16,4 @@ MonoBehaviour:
     LevelGraph: {fileID: 11400000, guid: 5efe30e78bc454246bd1627aad954704, type: 2}
     UseCorridors: 0
   _postProcessingTasks:
-  - {fileID: 11400000, guid: 9f0d04aacddc1ea4e803e7abe6ca0f72, type: 2}
-  - {fileID: 11400000, guid: f65c35c4be922d94f81a37627d4023a3, type: 2}
-  - {fileID: 11400000, guid: 82157f7d47b2b6944a24f16c73728880, type: 2}
   - {fileID: 11400000, guid: 10b39cf126ece674f85dd92e758565ff, type: 2}
-  - {fileID: 11400000, guid: 047283da19e802a40b399509397bc650, type: 2}

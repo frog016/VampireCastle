@@ -40,8 +40,11 @@ public class MapGenerator : MonoBehaviour
 
         OnLevelPreGenerated?.Invoke(CurrentLevel);
         var generatedLevel = _generator.Generate() as DungeonGeneratorPayloadGrid2D;
+
         var startPosition = GetStartPosition(generatedLevel.GeneratedLevel);
         MovePlayerInPosition(startPosition);
+
+        _provider.UnConfigureGenerator(_generator);
     }
 
     public void GenerateNextLevel()

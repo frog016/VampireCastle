@@ -1,8 +1,8 @@
-using System.Collections.Generic;
 using System.Linq;
 using Edgar.Unity;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Zenject;
 
 public abstract class InteractiveObjectsPostProcessing : DungeonGeneratorPostProcessingGrid2D
 {
@@ -11,33 +11,35 @@ public abstract class InteractiveObjectsPostProcessing : DungeonGeneratorPostPro
 
     public int ItemsCount { get => _itemCount; set => _itemCount = value; }
 
-    protected static HashSet<Vector2> _usedPositions; 
+    protected Map _map;
+    protected IFactory<GameObject> _factory;
 
     public override void Run(DungeonGeneratorLevelGrid2D level)
     {
-        if (_usedPositions == null)
-        {
-            var position = level.RoomInstances.Last().RoomTemplateInstance.GetComponentInChildren<StartPosition>()
-                .transform.position;
-            _usedPositions = new HashSet<Vector2>
-            {
-                position,
-                position + Vector3.up,
-                position + Vector3.left
-            };
-        }
+        _map = level.RootGameObject.GetComponent<Map>();
 
         for (var i = 0; i < _itemCount; i++)
-            SpawnInteractiveObject(level.GetSharedTilemaps(), _itemPrefab).transform.SetParent(level.RootGameObject.transform);
+            SpawnInteractiveObject(level.GetSharedTilemaps().Last(), _itemPrefab).transform.SetParent(level.RootGameObject.transform);
     }
 
-    protected abstract GameObject SpawnInteractiveObject(List<Tilemap> tilemaps, GameObject interactiveObject);
-
-    protected abstract WallPosition FindSpawnPosition(Tilemap tilemap);
-
-    protected bool IsPositionValid(Tilemap tilemap, WallPosition position)
+    [Inject]
+    public void Initialize(IFactory<GameObject> factory)
     {
-        var cellPosition = tilemap.WorldToCell(position.Position - position.WallDirection);
-        return tilemap.GetTile(cellPosition) == null && !_usedPositions.Contains(position.Position);
+        _factory = factory;
     }
+
+    protected Vector2 GetValidSpawnPosition(Tilemap tilemap)
+    {
+        var position = FindSpawnPosition(tilemap);
+        while (!IsPositionValid(position))
+            position = FindSpawnPosition(tilemap);
+
+        return position;
+    }
+
+    protected abstract Vector2 FindSpawnPosition(Tilemap tilemap);
+
+    protected abstract GameObject SpawnInteractiveObject(Tilemap tilemap, GameObject interactiveObject);
+
+    protected abstract bool IsPositionValid(Vector2 position);
 }

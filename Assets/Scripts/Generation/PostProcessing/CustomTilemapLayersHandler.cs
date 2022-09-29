@@ -11,7 +11,7 @@ public class CustomTilemapLayersHandler : TilemapLayersHandlerBaseGrid2D
         CreateTilemapGameObject("Floor", gameObject, 0);
 
         var wallsTilemapObject = CreateTilemapGameObject("Walls", gameObject, 1);
-        AddCompositeCollider(wallsTilemapObject);
+        AddColliderAndRigidbody(wallsTilemapObject);
     }
 
     protected GameObject CreateTilemapGameObject(string name, GameObject parentObject, int sortingOrder)
@@ -26,15 +26,16 @@ public class CustomTilemapLayersHandler : TilemapLayersHandlerBaseGrid2D
         return tilemapObject;
     }
 
-    protected void AddCompositeCollider(GameObject tilemapGameObject, bool isTrigger = false)
+    protected void AddColliderAndRigidbody(GameObject tilemapGameObject, bool isTrigger = false)
     {
         var tilemapCollider2D = tilemapGameObject.AddComponent<TilemapCollider2D>();
-        tilemapCollider2D.usedByComposite = true;
+        //tilemapCollider2D.usedByComposite = true;
 
-        var compositeCollider2d = tilemapGameObject.AddComponent<CompositeCollider2D>();
-        compositeCollider2d.geometryType = CompositeCollider2D.GeometryType.Outlines;
-        compositeCollider2d.isTrigger = isTrigger;
+        var rigidbody = tilemapGameObject.AddComponent<Rigidbody2D>();
+        rigidbody.bodyType = RigidbodyType2D.Static;
 
-        tilemapGameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        //var compositeCollider2d = tilemapGameObject.AddComponent<CompositeCollider2D>();
+        //compositeCollider2d.geometryType = CompositeCollider2D.GeometryType.Polygons;
+        //compositeCollider2d.isTrigger = isTrigger;
     }
 }

@@ -1,53 +1,36 @@
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 [CreateAssetMenu(menuName = "Edgar/Post processing/Interactive Objects/Window", fileName = "WindowPostProcessing")]
 public class WindowPostProcessing : InteractiveObjectsPostProcessing
 {
-    [SerializeField] private GameObject _sideWindow;
+    private Vector2 _direction;
 
-    protected override WallPosition FindSpawnPosition(Tilemap tilemap)
+    protected override GameObject SpawnInteractiveObject(Tilemap tilemap, GameObject interactiveObject)
     {
-        var cellSize = tilemap.layoutGrid.cellSize.x; ;
-        var bounds = tilemap.cellBounds;
+        var position = GetValidSpawnPosition(tilemap);
+        _map.TryAdd(position);
 
-        var position = new Vector2(
-            UnityEngine.Random.Range(0, 2) == 0 ? bounds.xMin + cellSize / 2f : bounds.xMax - cellSize / 2f,
-            UnityEngine.Random.Range(bounds.yMin + (int)cellSize, bounds.yMax - (int)cellSize) + cellSize / 2f);
-        var direction = Vector2.right * Mathf.Sign(tilemap.LocalToWorld(position).x);
-
-        if (UnityEngine.Random.Range(0, 2) == 1)
-        {
-            position = new Vector2(
-                UnityEngine.Random.Range(bounds.xMin + (int)cellSize, bounds.xMax - (int)cellSize) + cellSize / 2f,
-                UnityEngine.Random.Range(0, 2) == 0 ? bounds.yMin + cellSize / 2f : bounds.yMax - cellSize / 2f);
-            direction = Vector2.up * Mathf.Sign(tilemap.LocalToWorld(position).y);
-        }
-
-        return new WallPosition(direction, tilemap.LocalToWorld(position));
+        var createdObject = _factory.Create(interactiveObject);
+        createdObject.transform.position = position;
+        return createdObject;
     }
 
-    protected override GameObject SpawnInteractiveObject(List<Tilemap> tilemaps, GameObject interactiveObject)
+    protected override Vector2 FindSpawnPosition(Tilemap tilemap)
     {
-        var tilemap = tilemaps.Last();
-        var position = FindSpawnPosition(tilemap);
+        var positions = _map.GetFreePositions();
+        var position = positions[UnityEngine.Random.Range(0, positions.Length)];
+        var projection = (Vector2)tilemap.LocalToWorld(tilemap.cellBounds.GetPointProjection(tilemap.WorldToLocal(position)));
 
-        while (!IsPositionValid(tilemap, position))
-            position = FindSpawnPosition(tilemap);
+        var cellSize = tilemap.layoutGrid.cellSize.x;
+        _direction = (projection - position).normalized * cellSize;
 
-        _usedPositions.Add(position.Position);
-        var rotation = Quaternion.FromToRotation(Vector3.up, position.WallDirection);
-        if (rotation.eulerAngles.z % 180 != 0)
-        {
-            interactiveObject = _sideWindow;
-            rotation.eulerAngles += new Vector3(0, 0, 90);
-        }
+        projection -= _direction / 2f;
+        return projection;
+    }
 
-        var window = Instantiate(interactiveObject, position.Position, rotation);
-        Window.Count++;
-
-        return window;
+    protected override bool IsPositionValid(Vector2 position)
+    {
+        return _map.ContainsPosition(position - _direction);
     }
 }
