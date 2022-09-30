@@ -12,7 +12,9 @@ public class MapPostProcessing : DungeonGeneratorPostProcessingGrid2D
     public override void Run(DungeonGeneratorLevelGrid2D level)
     {
         var levelGameObject = level.RootGameObject;
-        var map = levelGameObject.AddComponent<Map>();
+        var map = levelGameObject.GetComponent<Map>();
+        map ??= levelGameObject.AddComponent<Map>();
+        map.Clear();
 
         var path = _pathfinder.FindPath(level.GetSharedTilemaps().ToArray());
         map.TakeUpPositions(path);

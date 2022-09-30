@@ -21,6 +21,6 @@ public abstract class FloorInteractiveObjectPostProcessing : InteractiveObjectsP
 
     protected override bool IsPositionValid(Vector2 position)
     {
-        return _map.ContainsPosition(position);
+        return _map.ContainsPosition(position) && _map.IsEmpty(position);
     }
 }

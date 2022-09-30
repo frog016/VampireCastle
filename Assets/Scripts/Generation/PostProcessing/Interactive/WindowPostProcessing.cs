@@ -9,7 +9,7 @@ public class WindowPostProcessing : InteractiveObjectsPostProcessing
     protected override GameObject SpawnInteractiveObject(Tilemap tilemap, GameObject interactiveObject)
     {
         var position = GetValidSpawnPosition(tilemap);
-        _map.TryAdd(position);
+        _map.TryAdd(position - _direction);
 
         var createdObject = _factory.Create(interactiveObject);
         createdObject.transform.position = position;
@@ -31,6 +31,7 @@ public class WindowPostProcessing : InteractiveObjectsPostProcessing
 
     protected override bool IsPositionValid(Vector2 position)
     {
-        return _map.ContainsPosition(position - _direction);
+        var newPosition = position - _direction;
+        return _map.ContainsPosition(newPosition) && _map.IsEmpty(newPosition);
     }
 }

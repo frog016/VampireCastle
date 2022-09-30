@@ -29,13 +29,13 @@ public class CustomTilemapLayersHandler : TilemapLayersHandlerBaseGrid2D
     protected void AddColliderAndRigidbody(GameObject tilemapGameObject, bool isTrigger = false)
     {
         var tilemapCollider2D = tilemapGameObject.AddComponent<TilemapCollider2D>();
-        //tilemapCollider2D.usedByComposite = true;
+        tilemapCollider2D.usedByComposite = true;
 
         var rigidbody = tilemapGameObject.AddComponent<Rigidbody2D>();
         rigidbody.bodyType = RigidbodyType2D.Static;
 
-        //var compositeCollider2d = tilemapGameObject.AddComponent<CompositeCollider2D>();
-        //compositeCollider2d.geometryType = CompositeCollider2D.GeometryType.Polygons;
-        //compositeCollider2d.isTrigger = isTrigger;
+        var compositeCollider2d = tilemapGameObject.AddComponent<CompositeCollider2D>();
+        compositeCollider2d.geometryType = CompositeCollider2D.GeometryType.Polygons;
+        compositeCollider2d.isTrigger = isTrigger;
     }
 }

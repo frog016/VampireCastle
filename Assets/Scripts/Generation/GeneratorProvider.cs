@@ -21,11 +21,12 @@ public class GeneratorProvider : ScriptableObject, IGeneratorProvider<DungeonGen
 
     public void UnConfigureGenerator(DungeonGeneratorGrid2D generator)
     {
-        if (_currentData?.PostProcessingTasks.Length == 0)
+        if (_currentData == null || _currentData.PostProcessingTasks.Length == 0)
             return;
 
         var length = generator.CustomPostProcessTasks.Count;
         generator.CustomPostProcessTasks.RemoveAt(length - _currentData.PostProcessingTasks.Length);
+        _currentData = null;
     }
 
     public GenerationData GetGenerationData()
