@@ -1,3 +1,4 @@
+using Edgar.Unity;
 using UnityEngine;
 
 [RequireComponent(typeof(Movement))]

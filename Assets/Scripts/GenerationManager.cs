@@ -69,7 +69,7 @@ public class GenerationManager : SingletonObject<GenerationManager>
         if (difficulty != null)
             _currentDifficulty = difficulty;
 
-        var tasks = _generator.CustomPostProcessTasks.Cast<InteractiveObjectsPostProcessing>().ToList();
+        var tasks = _generator.CustomPostProcessTasks.Where(t => t is InteractiveObjectsPostProcessing).Cast<InteractiveObjectsPostProcessing>().ToList();
         foreach (var task in tasks)
         {
             var type = task.GetType();
