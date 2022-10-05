@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public abstract class PanelBase : MonoBehaviour
 {
     [SerializeField] protected Text _scoreText;
+    [SerializeField] private GameObject _shadowPanel;
+    [SerializeField] private GameObject _pauseButton;
 
     protected virtual void Start()
     {
@@ -16,12 +18,16 @@ public abstract class PanelBase : MonoBehaviour
     public virtual void OpenPanel()
     {
         gameObject.SetActive(true);
+        _shadowPanel.SetActive(true);
+        _pauseButton.SetActive(false);
         PauseManager.Pause();
     }
 
     public virtual void ClosePanel()
     {
         gameObject.SetActive(false);
+        _shadowPanel.SetActive(false);
+        _pauseButton.SetActive(true);
         PauseManager.Continue();
     }
 

@@ -1,28 +1,36 @@
-using Edgar.Unity;
 using UnityEngine;
 
 [RequireComponent(typeof(Movement))]
 public class CharacterController : MonoBehaviour
 {
+    private IInputSystem _inputSystem;
     private Movement _movement;
 
     private void Awake()
     {
         _movement = GetComponent<Movement>();
+        _inputSystem = GetInputSystem();
     }
 
     private void Update()
     {
-        var direction = GetDirection().normalized;
+        var direction = _inputSystem.GetMoveDirection().normalized;
         if (direction.magnitude > 1e-3)
             _movement.TryMove(direction);
     }
 
-    private Vector2 GetDirection()
+    private IInputSystem GetInputSystem()
     {
-        var x = Input.GetAxis("Horizontal");
-        var y = Input.GetAxis("Vertical");
+        switch (Application.platform)
+        {
+            case RuntimePlatform.Android:
+                return new AndroidInput(gameObject);
+            case RuntimePlatform.WindowsPlayer:
+                return new KeyboardInput();
+            case RuntimePlatform.WindowsEditor:
+                return new KeyboardInput();
+        }
 
-        return Mathf.Abs(x) > Mathf.Abs(y) ? new Vector2(x, 0) : new Vector2(0, y);
+        return null;
     }
 }
