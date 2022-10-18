@@ -1,13 +1,17 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Window : InteractiveObject
-{
+{ 
     public UnityEvent OnWindowClosed { get; private set; }
+
+    private Animator _animator;
 
     private void Awake()
     {
         OnWindowClosed = new UnityEvent();
+        _animator = GetComponentInChildren<Animator>();
     }
 
     protected override void Interact(GameObject triggeredObject)
@@ -20,8 +24,7 @@ public class Window : InteractiveObject
     private void CloseWindow()
     {
         OnWindowClosed.Invoke();
-        var sprites = GetComponentsInChildren<SpriteRenderer>(true);
-        sprites[0].gameObject.SetActive(false);
-        sprites[1].gameObject.SetActive(true);
+        _animator.Play("WindowClosing");
+        GetComponentInChildren<ParticleSystem>().Stop();
     }
 }

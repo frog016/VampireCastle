@@ -4,7 +4,7 @@ using UnityEngine;
 public class SwipeDetector : MonoBehaviour
 {
     [SerializeField] private bool _detectSwipeOnlyAfterRelease = false;
-    [SerializeField] private float _minDistanceForSwipe = 20f;
+    [SerializeField] private float _minDistanceForSwipe = 100f;
 
     private Vector2 _fingerDownPosition;
     private Vector2 _fingerUpPosition;

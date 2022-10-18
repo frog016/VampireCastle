@@ -3,8 +3,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-[CreateAssetMenu(menuName = "Edgar/Post processing/Interactive Objects/HolyWater", fileName = "HolyWaterPostProcessing")]
-public class HolyWaterPostProcessing : InteractiveObjectsPostProcessing
+[CreateAssetMenu(menuName = "Edgar/Post processing/Interactive Objects/Garlic", fileName = "GarlicPostProcessing")]
+public class GarlicPostProcessing : InteractiveObjectsPostProcessing
 {
     protected override WallPosition FindSpawnPosition(Tilemap tilemap)
     {

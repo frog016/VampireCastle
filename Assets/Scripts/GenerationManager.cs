@@ -43,7 +43,7 @@ public class GenerationManager : SingletonObject<GenerationManager>
     public void GenerateLevel()
     {
         CurrentLevel++;
-        Statistic.Instance.BestScore = Mathf.Max(CurrentLevel, Statistic.Instance.BestScore);
+        Statistic.Instance.BestScore = Mathf.Max(CurrentLevel - 1, Statistic.Instance.BestScore);
         ChangeGenerationParameters();
         var level = _generator.Generate() as DungeonGeneratorPayloadGrid2D;
         var startPosition = GetStartPosition(level.GeneratedLevel);
@@ -77,7 +77,7 @@ public class GenerationManager : SingletonObject<GenerationManager>
                 task.ItemsCount = _currentDifficulty.WindowsCount;
             else if (type == typeof(HourglassPostProcessing))
                 task.ItemsCount = _currentDifficulty.HourglassCount;
-            else if (type == typeof(HolyWaterPostProcessing))
+            else if (type == typeof(GarlicPostProcessing))
                 task.ItemsCount = _currentDifficulty.HolyWaterCount;
         }
 
