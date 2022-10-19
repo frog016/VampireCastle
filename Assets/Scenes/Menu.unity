@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sun rays
       objectReference: {fileID: 0}
+    - target: {fileID: 8755122093441246835, guid: bba2d4c1c26d7c24089e7ed6263c9a2a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8755122093441246846, guid: bba2d4c1c26d7c24089e7ed6263c9a2a, type: 3}
       propertyPath: m_RootOrder
       value: 1
