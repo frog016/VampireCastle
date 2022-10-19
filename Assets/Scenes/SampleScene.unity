@@ -2972,6 +2972,7 @@ MonoBehaviour:
   _endColor: {r: 1, g: 0.16470589, b: 0.21568628, a: 1}
   _frontTransform: {fileID: 1569266914}
   _timerText: {fileID: 877005788}
+  _animator: {fileID: 1967298881}
 --- !u!1 &1569266913
 GameObject:
   m_ObjectHideFlags: 0
@@ -4353,6 +4354,7 @@ GameObject:
   - component: {fileID: 1967298878}
   - component: {fileID: 1967298880}
   - component: {fileID: 1967298879}
+  - component: {fileID: 1967298881}
   m_Layer: 5
   m_Name: Hourglass
   m_TagString: Untagged
@@ -4417,6 +4419,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967298877}
   m_CullTransparentMesh: 1
+--- !u!95 &1967298881
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967298877}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11b2160737545294c8e91eb06ce85401, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2076682463
 GameObject:
   m_ObjectHideFlags: 0

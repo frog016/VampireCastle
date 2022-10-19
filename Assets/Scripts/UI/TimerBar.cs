@@ -7,6 +7,7 @@ public class TimerBar : MonoBehaviour
     [SerializeField] private Color _endColor;
     [SerializeField] private Transform _frontTransform;
     [SerializeField] private Text _timerText;
+    [SerializeField] private Animator _animator;
 
     private Image _slider;
 
@@ -22,9 +23,12 @@ public class TimerBar : MonoBehaviour
 
     private void ChangeValue()
     {
-        _slider.fillAmount = Timer.Instance.CurrentTime / Timer.Instance.MaxTime;
+        var time = Timer.Instance.CurrentTime;
+        _animator.SetFloat("Time", time);
+
+        _slider.fillAmount = time / Timer.Instance.MaxTime;
         var lerpTime = 1 - _slider.fillAmount;
         _slider.color = Color.Lerp(_startColor, _endColor, lerpTime);
-        _timerText.text = ((int)Timer.Instance.CurrentTime).ToString();
+        _timerText.text = ((int)time).ToString();
     }
 }
