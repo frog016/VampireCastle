@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb05380f3a7768242aca72adebc51859, type: 3}
-  m_Name: HolyWaterPostProcessing
+  m_Script: {fileID: 11500000, guid: 0571989ed3bb0de498205dacaa4f55ee, type: 3}
+  m_Name: GoldenMoneyWallet
   m_EditorClassIdentifier: 
-  _itemCount: 1
-  _itemPrefab: {fileID: 2956569248001539811, guid: 86594f3470877df4195858c8330d91fc, type: 3}
+  _balance: 0
