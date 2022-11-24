@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Window : InteractiveTime
+public class Window : HealthChangerObject
 {
     public static int Count;
     public static event Action OnWindowClosedEvent;
@@ -15,7 +15,6 @@ public class Window : InteractiveTime
     {
         base.Interact(triggeredObject);
         CloseWindow();
-        Destroy(this);
     }
 
     private void CloseWindow()

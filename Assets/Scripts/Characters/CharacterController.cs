@@ -1,22 +1,27 @@
 using UnityEngine;
 
-[RequireComponent(typeof(SlidingMovement))]
+[RequireComponent(typeof(PhysicSlidingMovement))]
 public class CharacterController : MonoBehaviour
 {
     private IInputSystem _inputSystem;
-    private Movement _movement;
+    private IMovement _movement;
+
+    private Vector3 _direction;
 
     private void Awake()
     {
-        _movement = GetComponent<Movement>();
+        _movement = GetComponent<IMovement>();
         _inputSystem = GetInputSystem();
+    }
+
+    private void Update()
+    {
+        _direction = _inputSystem.GetMoveDirection().normalized;
     }
 
     private void FixedUpdate()
     {
-        var direction = _inputSystem.GetMoveDirection().normalized;
-        if (direction.magnitude > 1e-3)
-            _movement.TryMove(direction);
+        _movement.Move(_direction);
     }
 
     private IInputSystem GetInputSystem()

@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 745563648710b8c4eb06869ebd36b803, type: 3}
-  m_Name: HourglassPostProcessing
+  m_Script: {fileID: 11500000, guid: efdb5d2df54410d41968f3fb5c57626b, type: 3}
+  m_Name: DifficultyInstaller
   m_EditorClassIdentifier: 
-  _objectsCount: 0
-  _objectPrefab: {fileID: 2649269149489804282, guid: d0de274f036f7294fa24ed71fcd5d0cb, type: 3}
+  _configurator: {fileID: 11400000, guid: 027f7aec7b5ee67479d286aeda352078, type: 2}

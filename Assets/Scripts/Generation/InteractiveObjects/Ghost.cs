@@ -1,3 +1,3 @@
-public class Ghost : InteractiveTime
+public class Ghost : HealthChangerObject
 {
 }

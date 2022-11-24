@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2956569248001539808}
   - component: {fileID: 2956569248001539809}
-  - component: {fileID: 2956569248001539810}
+  - component: {fileID: 2584372538817222446}
   m_Layer: 0
   m_Name: Garlic
   m_TagString: Untagged
@@ -59,7 +59,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
---- !u!114 &2956569248001539810
+--- !u!114 &2584372538817222446
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -68,10 +68,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2956569248001539811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4cac7bccf5a8fc4bbe44da204e8a6ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 782d9d62a906a1645b39dbffaa088da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _additionalTime: -7
+  _healthValueDelta: -10
+  _destroyOnInteract: 1
 --- !u!1 &2956569249039247369
 GameObject:
   m_ObjectHideFlags: 0

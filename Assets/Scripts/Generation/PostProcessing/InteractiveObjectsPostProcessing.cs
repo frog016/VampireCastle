@@ -4,12 +4,10 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using Zenject;
 
-public abstract class InteractiveObjectsPostProcessing : DungeonGeneratorPostProcessingGrid2D
+public abstract class InteractiveObjectsPostProcessing : DungeonGeneratorPostProcessingGrid2D, IConfigurable<float>
 {
-    [SerializeField] private int _itemCount;
-    [SerializeField] protected GameObject _itemPrefab;
-
-    public int ItemsCount { get => _itemCount; set => _itemCount = value; }
+    [SerializeField] private int _objectsCount;
+    [SerializeField] protected GameObject _objectPrefab;
 
     protected Map _map;
     protected IFactory<GameObject> _factory;
@@ -18,14 +16,19 @@ public abstract class InteractiveObjectsPostProcessing : DungeonGeneratorPostPro
     {
         _map = level.RootGameObject.GetComponent<Map>();
 
-        for (var i = 0; i < _itemCount; i++)
-            SpawnInteractiveObject(level.GetSharedTilemaps().Last(), _itemPrefab).transform.SetParent(level.RootGameObject.transform);
+        for (var i = 0; i < _objectsCount; i++)
+            SpawnInteractiveObject(level.GetSharedTilemaps().Last(), _objectPrefab).transform.SetParent(level.RootGameObject.transform);
     }
 
     [Inject]
     public void Initialize(IFactory<GameObject> factory)
     {
         _factory = factory;
+    }
+
+    public void Configure(float value)
+    {
+        _objectsCount = (int)value;
     }
 
     protected Vector2 GetValidSpawnPosition(Tilemap tilemap)

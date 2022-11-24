@@ -12,34 +12,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e8c8d6da5bb61b4e8adb1070a5facc9, type: 3}
   m_Name: DifficultySettings
   m_EditorClassIdentifier: 
-  _parameters:
-  - _levelNumber: 1
-    _windowsCount: 1
-    _hourglassCount: 0
-    _holyWaterCount: 0
-    _timerSpeed: 1
-  - _levelNumber: 2
-    _windowsCount: 2
-    _hourglassCount: 1
-    _holyWaterCount: 0
-    _timerSpeed: 1.2
-  - _levelNumber: 5
-    _windowsCount: 3
-    _hourglassCount: 1
-    _holyWaterCount: 1
-    _timerSpeed: 1.5
-  - _levelNumber: 10
-    _windowsCount: 4
-    _hourglassCount: 2
-    _holyWaterCount: 1
-    _timerSpeed: 1.75
-  - _levelNumber: 15
-    _windowsCount: 4
-    _hourglassCount: 2
-    _holyWaterCount: 1
-    _timerSpeed: 2
-  - _levelNumber: 20
-    _windowsCount: 4
-    _hourglassCount: 2
-    _holyWaterCount: 2
-    _timerSpeed: 2.5
+  _settings:
+  - _configurable: {fileID: 11400000, guid: f65c35c4be922d94f81a37627d4023a3, type: 2}
+    _difficultyParameters:
+    - _levelNumber: 1
+      _parameterValue: 0
+    - _levelNumber: 2
+      _parameterValue: 0
+    - _levelNumber: 5
+      _parameterValue: 1
+    - _levelNumber: 10
+      _parameterValue: 1
+    - _levelNumber: 15
+      _parameterValue: 1
+    - _levelNumber: 20
+      _parameterValue: 2
+  - _configurable: {fileID: 11400000, guid: 82157f7d47b2b6944a24f16c73728880, type: 2}
+    _difficultyParameters:
+    - _levelNumber: 1
+      _parameterValue: 0
+    - _levelNumber: 2
+      _parameterValue: 1
+    - _levelNumber: 5
+      _parameterValue: 1
+    - _levelNumber: 10
+      _parameterValue: 2
+    - _levelNumber: 15
+      _parameterValue: 2
+    - _levelNumber: 20
+      _parameterValue: 2
+  - _configurable: {fileID: 11400000, guid: 9f0d04aacddc1ea4e803e7abe6ca0f72, type: 2}
+    _difficultyParameters:
+    - _levelNumber: 1
+      _parameterValue: 1
+    - _levelNumber: 2
+      _parameterValue: 2
+    - _levelNumber: 5
+      _parameterValue: 3
+    - _levelNumber: 10
+      _parameterValue: 4
+    - _levelNumber: 15
+      _parameterValue: 4
+    - _levelNumber: 20
+      _parameterValue: 4
+  - _configurable: {fileID: 11400000, guid: 027f7aec7b5ee67479d286aeda352078, type: 2}
+    _difficultyParameters:
+    - _levelNumber: 1
+      _parameterValue: 1
+    - _levelNumber: 2
+      _parameterValue: 1.2
+    - _levelNumber: 5
+      _parameterValue: 1.5
+    - _levelNumber: 10
+      _parameterValue: 1.75
+    - _levelNumber: 15
+      _parameterValue: 2
+    - _levelNumber: 20
+      _parameterValue: 2.5
+  - _configurable: {fileID: 11400000, guid: 10b39cf126ece674f85dd92e758565ff, type: 2}
+    _difficultyParameters:
+    - _levelNumber: 1
+      _parameterValue: 0
+    - _levelNumber: 2
+      _parameterValue: 1
+    - _levelNumber: 5
+      _parameterValue: 1
+    - _levelNumber: 10
+      _parameterValue: 1
+    - _levelNumber: 15
+      _parameterValue: 2
+    - _levelNumber: 20
+      _parameterValue: 2

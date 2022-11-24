@@ -27,7 +27,7 @@ public class GenerationInstaller : ScriptableObjectInstaller<GenerationInstaller
             Container
                 .Bind(task.GetType())
                 .FromScriptableObject(task)
-                .AsSingle();
+                .AsTransient();
 
             Container.Inject(task);
         }

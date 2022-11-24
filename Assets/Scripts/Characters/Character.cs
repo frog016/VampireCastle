@@ -1,5 +1,4 @@
 using UnityEngine;
-using Zenject;
 
 public class Character : MonoBehaviour
 {
@@ -7,10 +6,9 @@ public class Character : MonoBehaviour
 
     private Timer _timer;
 
-    [Inject]
-    public void Initialize(Timer timer)
+    private void Awake()
     {
-        _timer = timer;
+        _timer = FindObjectOfType<Timer>();
         CanApplyDamage = true;
     }
 

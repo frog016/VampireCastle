@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Timer : MonoBehaviour
+public class Timer : MonoBehaviour, IConfigurable<float>
 {
     [SerializeField] private float _maxTime;
     [SerializeField] private float _tickSpeed;
@@ -29,6 +29,11 @@ public class Timer : MonoBehaviour
 
         if (CurrentTime < 1e-5)
             StopTimer();
+    }
+
+    public void Configure(float value)
+    {
+        TickSpeed = value;
     }
 
     public void StartTimer()

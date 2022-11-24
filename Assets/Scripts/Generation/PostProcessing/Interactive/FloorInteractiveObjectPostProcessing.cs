@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public abstract class FloorInteractiveObjectPostProcessing : InteractiveObjectsPostProcessing
+[CreateAssetMenu(menuName = "Edgar/Post processing/Interactive Objects/FloorInteractiveObject", fileName = "FloorInteractiveObject")]
+public class FloorInteractiveObjectPostProcessing : InteractiveObjectsPostProcessing
 {
     protected override GameObject SpawnInteractiveObject(Tilemap tilemap, GameObject interactiveObject)
     {

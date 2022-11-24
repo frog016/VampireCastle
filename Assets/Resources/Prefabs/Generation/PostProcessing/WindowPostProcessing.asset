@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2fd89300f1a304ebdb2042419e24c8, type: 3}
   m_Name: WindowPostProcessing
   m_EditorClassIdentifier: 
-  _itemCount: 2
-  _itemPrefab: {fileID: 2126076878622744184, guid: b5c8e8055ef06ac48b9b2612d81c1dee, type: 3}
-  _sideWindow: {fileID: 2126076878622744184, guid: 581ef5265e4f6ce4b99e84d13c006727, type: 3}
+  _objectsCount: 0
+  _objectPrefab: {fileID: 2126076878622744184, guid: b5c8e8055ef06ac48b9b2612d81c1dee, type: 3}

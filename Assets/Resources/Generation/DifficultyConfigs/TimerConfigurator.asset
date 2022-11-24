@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 745563648710b8c4eb06869ebd36b803, type: 3}
-  m_Name: HourglassPostProcessing
+  m_Script: {fileID: 11500000, guid: 08ee05e668fc36145bf89398b5f84dc5, type: 3}
+  m_Name: TimerConfigurator
   m_EditorClassIdentifier: 
-  _objectsCount: 0
-  _objectPrefab: {fileID: 2649269149489804282, guid: d0de274f036f7294fa24ed71fcd5d0cb, type: 3}
