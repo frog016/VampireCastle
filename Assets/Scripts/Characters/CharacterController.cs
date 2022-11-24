@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(PhysicSlidingMovement))]
+[RequireComponent(typeof(IMovement))]
 public class CharacterController : MonoBehaviour
 {
     private IInputSystem _inputSystem;
@@ -21,6 +21,9 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_direction.magnitude < 1e-5)
+            return;
+
         _movement.Move(_direction);
     }
 

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PhysicSlidingMovement : MonoBehaviour, IMovement
+public class SlidingMovement : MonoBehaviour, IMovement
 {
     [SerializeField] private float _speed;
 
