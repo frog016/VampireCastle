@@ -1,10 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Window : HealthChangerObject
 {
     public static int Count;
     public static event Action OnWindowClosedEvent;
+
+    [SerializeField] private UnityEvent _onWindowClosedEvent;
 
     private void Awake()
     {
@@ -21,8 +24,6 @@ public class Window : HealthChangerObject
     {
         Count--;
         OnWindowClosedEvent?.Invoke();
-        var sprites = GetComponentsInChildren<SpriteRenderer>(true);
-        sprites[0].gameObject.SetActive(false);
-        sprites[1].gameObject.SetActive(true);
+        _onWindowClosedEvent.Invoke();
     }
 }

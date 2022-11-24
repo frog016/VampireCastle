@@ -18,6 +18,11 @@ public class HealthChangerObject : InteractiveObject
         action(Mathf.Abs(_healthValueDelta));
 
         if (_destroyOnInteract)
-            Destroy(gameObject);
+            DestroyInteractiveObject();
+    }
+
+    protected void DestroyInteractiveObject()
+    {
+        Destroy(gameObject);
     }
 }

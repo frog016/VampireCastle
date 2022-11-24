@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Map : MonoBehaviour
 {
+    public Vector2 Center { get; set; }
+
     private Dictionary<Vector2, bool> _insidePositions;
 
     private void Awake()

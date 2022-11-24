@@ -13,6 +13,8 @@ public class WindowPostProcessing : InteractiveObjectsPostProcessing
 
         var createdObject = _factory.Create(interactiveObject);
         createdObject.transform.position = position;
+        createdObject.transform.Rotate(Vector3.forward, Vector2.SignedAngle(Vector2.up, _direction)); 
+
         return createdObject;
     }
 

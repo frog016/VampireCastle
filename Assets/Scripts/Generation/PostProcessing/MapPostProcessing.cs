@@ -18,5 +18,6 @@ public class MapPostProcessing : DungeonGeneratorPostProcessingGrid2D
 
         var path = _pathfinder.FindPath(level.GetSharedTilemaps().ToArray());
         map.TakeUpPositions(path);
+        map.Center = level.RootGameObject.transform.position;
     }
 }
