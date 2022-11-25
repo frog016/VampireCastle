@@ -55,4 +55,9 @@ public class MapGenerator : MonoBehaviour
 
         _provider.ConfigureGenerator(_generator);
     }
+
+    private void OnDisable()
+    {
+        _provider.UnConfigureGenerator(_generator);
+    }
 }

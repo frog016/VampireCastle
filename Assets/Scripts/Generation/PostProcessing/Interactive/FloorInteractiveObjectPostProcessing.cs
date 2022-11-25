@@ -4,14 +4,15 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(menuName = "Edgar/Post processing/Interactive Objects/FloorInteractiveObject", fileName = "FloorInteractiveObject")]
 public class FloorInteractiveObjectPostProcessing : InteractiveObjectsPostProcessing
 {
-    protected override GameObject SpawnInteractiveObject(Tilemap tilemap, GameObject interactiveObject)
+    protected override GameObject[] SpawnInteractiveObjects(Tilemap tilemap, GameObject interactiveObject)
     {
         var position = GetValidSpawnPosition(tilemap);
         _map.TryAdd(position);
 
         var createdObject = _factory.Create(interactiveObject);
         createdObject.transform.position = position;
-        return createdObject;
+
+        return new GameObject[] { createdObject };
     }
 
     protected override Vector2 FindSpawnPosition(Tilemap tilemap)

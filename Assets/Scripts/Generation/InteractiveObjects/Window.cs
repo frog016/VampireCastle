@@ -23,6 +23,7 @@ public class Window : HealthChangerObject
     private void CloseWindow()
     {
         Count--;
+        GetComponent<Collider2D>().enabled = false;
         OnWindowClosedEvent?.Invoke();
         _onWindowClosedEvent.Invoke();
     }

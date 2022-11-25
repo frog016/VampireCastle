@@ -16,16 +16,16 @@ public class GeneratorProvider : ScriptableObject, IGeneratorProvider<DungeonGen
         _currentData = GetGenerationData();
 
         generator.FixedLevelGraphConfig = _currentData.GraphConfig;
-        generator.CustomPostProcessTasks.AddRange(_currentData.PostProcessingTasks);
+        generator.CustomPostProcessTasks.AddRange(_currentData.AdditionalPostProcessingTasks);
     }
 
     public void UnConfigureGenerator(DungeonGeneratorGrid2D generator)
     {
-        if (_currentData == null || _currentData.PostProcessingTasks.Length == 0)
+        if (_currentData == null || _currentData.AdditionalPostProcessingTasks.Length == 0)
             return;
 
         var length = generator.CustomPostProcessTasks.Count;
-        generator.CustomPostProcessTasks.RemoveAt(length - _currentData.PostProcessingTasks.Length);
+        generator.CustomPostProcessTasks.RemoveAt(length - _currentData.AdditionalPostProcessingTasks.Length);
         _currentData = null;
     }
 

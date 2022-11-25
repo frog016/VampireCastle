@@ -16,8 +16,10 @@ public abstract class InteractiveObjectsPostProcessing : DungeonGeneratorPostPro
     {
         _map = level.RootGameObject.GetComponent<Map>();
 
+        var tilemap = level.GetSharedTilemaps().Last();
         for (var i = 0; i < _objectsCount; i++)
-            SpawnInteractiveObject(level.GetSharedTilemaps().Last(), _objectPrefab).transform.SetParent(level.RootGameObject.transform);
+            foreach (var spawnedObject in SpawnInteractiveObjects(tilemap, _objectPrefab))
+                spawnedObject.transform.SetParent(level.RootGameObject.transform);
     }
 
     [Inject]
@@ -42,7 +44,7 @@ public abstract class InteractiveObjectsPostProcessing : DungeonGeneratorPostPro
 
     protected abstract Vector2 FindSpawnPosition(Tilemap tilemap);
 
-    protected abstract GameObject SpawnInteractiveObject(Tilemap tilemap, GameObject interactiveObject);
+    protected abstract GameObject[] SpawnInteractiveObjects(Tilemap tilemap, GameObject interactiveObject);
 
     protected abstract bool IsPositionValid(Vector2 position);
 }

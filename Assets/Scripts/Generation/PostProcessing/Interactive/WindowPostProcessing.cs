@@ -6,16 +6,16 @@ public class WindowPostProcessing : InteractiveObjectsPostProcessing
 {
     private Vector2 _direction;
 
-    protected override GameObject SpawnInteractiveObject(Tilemap tilemap, GameObject interactiveObject)
+    protected override GameObject[] SpawnInteractiveObjects(Tilemap tilemap, GameObject interactiveObject)
     {
         var position = GetValidSpawnPosition(tilemap);
         _map.TryAdd(position - _direction);
 
         var createdObject = _factory.Create(interactiveObject);
         createdObject.transform.position = position;
-        createdObject.transform.Rotate(Vector3.forward, Vector2.SignedAngle(Vector2.up, _direction)); 
+        createdObject.transform.Rotate(Vector3.forward, Vector2.SignedAngle(Vector2.up, _direction));
 
-        return createdObject;
+        return new GameObject[] { createdObject };
     }
 
     protected override Vector2 FindSpawnPosition(Tilemap tilemap)

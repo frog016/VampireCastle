@@ -7,7 +7,7 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(menuName = "Edgar/Post processing/Map", fileName = "MapPostProcessing")]
 public class MapPostProcessing : DungeonGeneratorPostProcessingGrid2D
 {
-    private IPathfinder<Vector2, Tilemap[]> _pathfinder = new TilemapPathfinder(new SlideWalker());
+    private TilemapPathfinder _pathfinder = new TilemapPathfinder(new SlideWalker());
 
     public override void Run(DungeonGeneratorLevelGrid2D level)
     {
