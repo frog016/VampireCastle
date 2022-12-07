@@ -39,8 +39,6 @@ public class MapGenerator : MonoBehaviour
 
         OnLevelPreGenerated?.Invoke(CurrentLevel);
         _generator.Generate();
-
-        _provider.UnConfigureGenerator(_generator);
     }
 
     public void GenerateNextLevel()

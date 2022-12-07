@@ -4495,10 +4495,6 @@ PrefabInstance:
       propertyPath: _items.Array.size
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 8954072972674592787, guid: 037c24ca031288b4e8797ca591537032, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 8954072972843740832, guid: 037c24ca031288b4e8797ca591537032, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4546,10 +4542,6 @@ PrefabInstance:
     - target: {fileID: 8954072972843740835, guid: 037c24ca031288b4e8797ca591537032, type: 3}
       propertyPath: m_Name
       value: Character
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8954072972843740862, guid: 037c24ca031288b4e8797ca591537032, type: 3}
       propertyPath: _speed

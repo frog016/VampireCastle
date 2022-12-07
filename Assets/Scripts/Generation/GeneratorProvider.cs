@@ -13,6 +13,7 @@ public class GeneratorProvider : ScriptableObject, IGeneratorProvider<DungeonGen
 
     public void ConfigureGenerator(DungeonGeneratorGrid2D generator)
     {
+        UnConfigureGenerator(generator);
         _currentData = GetGenerationData();
 
         generator.FixedLevelGraphConfig = _currentData.GraphConfig;
