@@ -72,6 +72,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9f0d04aacddc1ea4e803e7abe6ca0f72, type: 2}
   - {fileID: 11400000, guid: f65c35c4be922d94f81a37627d4023a3, type: 2}
   - {fileID: 11400000, guid: 82157f7d47b2b6944a24f16c73728880, type: 2}
+  - {fileID: 11400000, guid: 0bfe32f5a74b94644ad29c6d04668991, type: 2}
   OtherConfig:
     UseRandomSeed: 1
     RandomGeneratorSeed: 0

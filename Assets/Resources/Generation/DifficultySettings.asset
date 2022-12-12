@@ -83,3 +83,17 @@ MonoBehaviour:
       _parameterValue: 2
     - _levelNumber: 20
       _parameterValue: 2
+  - _configurable: {fileID: 11400000, guid: 0bfe32f5a74b94644ad29c6d04668991, type: 2}
+    _difficultyParameters:
+    - _levelNumber: 1
+      _parameterValue: 0
+    - _levelNumber: 2
+      _parameterValue: 1
+    - _levelNumber: 5
+      _parameterValue: 1
+    - _levelNumber: 10
+      _parameterValue: 2
+    - _levelNumber: 15
+      _parameterValue: 2
+    - _levelNumber: 20
+      _parameterValue: 2
