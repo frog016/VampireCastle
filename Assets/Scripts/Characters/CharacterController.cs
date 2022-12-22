@@ -11,7 +11,7 @@ public class CharacterController : MonoBehaviour
     private void Awake()
     {
         _movement = GetComponent<IMovement>();
-        _inputSystem = GetInputSystem();
+        _inputSystem = new KeyboardInput(); //GetInputSystem();
     }
 
     private void Update()

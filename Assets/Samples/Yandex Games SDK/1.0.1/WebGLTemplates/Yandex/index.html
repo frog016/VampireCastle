@@ -93,6 +93,12 @@
         }
       }
 
+      function setUserData(data){
+        if(initPlayer){
+          player.setData(data);
+        }
+      }
+
       function showFullscrenAd(){
         sdk.adv.showFullscreenAdv({
           callbacks: {

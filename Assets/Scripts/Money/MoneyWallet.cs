@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public abstract class MoneyWallet : SerializableScriptableObject
+public abstract class MoneyWallet : SavableScriptableObject
 {
     [SerializeField] protected float _balance;
 

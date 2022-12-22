@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Statistic", fileName = "Statistic")]
-public class Statistic : SingletonScriptableObject<Statistic>
+public class Statistic : SavableScriptableObject
 {
     [SerializeField] private int _bestScore;
 
