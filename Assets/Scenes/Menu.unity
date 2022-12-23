@@ -618,9 +618,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0a6c203c29e5294eb3c948d3fe22dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 1992659263}
-  _statistic: {fileID: 11400000, guid: fb179eee7f297fc4bb3605d0fb196d29, type: 2}
+  _bestScoreText: {fileID: 1992659263}
   _moneyText: {fileID: 1876864615}
+  _statistic: {fileID: 11400000, guid: fb179eee7f297fc4bb3605d0fb196d29, type: 2}
   _moneyWallet: {fileID: 11400000, guid: e7f07749c70ef4d46b0aa781621ddf1a, type: 2}
 --- !u!1 &1138849637
 GameObject:

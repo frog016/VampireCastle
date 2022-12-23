@@ -5,5 +5,10 @@ public class Statistic : SavableScriptableObject
 {
     [SerializeField] private int _bestScore;
 
-    public int BestScore { get => _bestScore; set => _bestScore = value; }
+    public ObservableVariable<int> BestScore = new ObservableVariable<int>();
+
+    private void OnValidate()
+    {
+        BestScore.Value = _bestScore;
+    }
 }

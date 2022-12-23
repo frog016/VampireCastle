@@ -2357,12 +2357,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa7bc09b1931fb4c83dfe85baf94df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 0}
+  _text: {fileID: 7747690839357161403}
   _bestScoreText: {fileID: 7747690839333538313}
   _moneyText: {fileID: 7747690837753222427}
-  _statistic: {fileID: 0}
-  _generator: {fileID: 0}
-  _moneyWallet: {fileID: 0}
+  _statistic: {fileID: 11400000, guid: fb179eee7f297fc4bb3605d0fb196d29, type: 2}
+  _generator: {fileID: 1198690594}
+  _moneyWallet: {fileID: 11400000, guid: e7f07749c70ef4d46b0aa781621ddf1a, type: 2}
 --- !u!1 &7747690838071070773
 GameObject:
   m_ObjectHideFlags: 0
