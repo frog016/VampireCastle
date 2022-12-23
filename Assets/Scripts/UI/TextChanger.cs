@@ -7,5 +7,11 @@ public class TextChanger : MonoBehaviour
 
     public void ChangeText(int number) => ChangeText(number.ToString());
 
-    public virtual void ChangeText(string text) => _text.text = text;
+    public virtual void ChangeText(string text)
+    {
+        if (_text == null)
+            return;
+
+        _text.text = text;
+    }
 }

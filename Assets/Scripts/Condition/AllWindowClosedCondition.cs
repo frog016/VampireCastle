@@ -7,12 +7,12 @@ public class AllWindowClosedCondition : ICondition
 
     public AllWindowClosedCondition()
     {
-        Window.OnWindowClosedEvent += CheckWindows;
+        Window.WindowClosingEvent += CheckWindows;
     }
 
-    private void CheckWindows()
+    private void CheckWindows(int remainingCount)
     {
-        if (Window.Count != 0)
+        if (remainingCount > 0)
             return;
 
         IsConditionMet = true;

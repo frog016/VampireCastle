@@ -4,27 +4,20 @@ using UnityEngine.Events;
 
 public class Window : HealthChangerObject
 {
-    public static int Count;
-    public static event Action OnWindowClosedEvent;
+    [SerializeField] private UnityEvent InteractedEventEditorOnly;
 
-    [SerializeField] private UnityEvent _onWindowClosedEvent;
+    public static event Action<int> WindowClosingEvent;
 
-    private void Awake()
+    private static int _createdObjectAmount;
+
+    private void Awake() => _createdObjectAmount++;
+
+    protected override void Destroy()
     {
-        Count++;
+        WindowClosingEvent?.Invoke(_createdObjectAmount - 1);
+        InteractedEventEditorOnly.Invoke();
+        Destroy(this);
     }
 
-    protected override void Interact(GameObject triggeredObject)
-    {
-        base.Interact(triggeredObject);
-        CloseWindow();
-    }
-
-    private void CloseWindow()
-    {
-        Count--;
-        GetComponent<Collider2D>().enabled = false;
-        OnWindowClosedEvent?.Invoke();
-        _onWindowClosedEvent.Invoke();
-    }
+    private void OnDestroy() => _createdObjectAmount--;
 }

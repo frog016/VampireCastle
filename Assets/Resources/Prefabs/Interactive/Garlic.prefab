@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2956569248001539808}
-  - component: {fileID: 2956569248001539809}
   - component: {fileID: 2584372538817222446}
+  - component: {fileID: 2956569248001539809}
   m_Layer: 0
   m_Name: Garlic
   m_TagString: Untagged
@@ -33,6 +33,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2584372538817222446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2956569248001539811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 782d9d62a906a1645b39dbffaa088da4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destroyOnInteract: 1
+  _healthValueDelta: -10
 --- !u!61 &2956569248001539809
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59,20 +73,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
---- !u!114 &2584372538817222446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2956569248001539811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 782d9d62a906a1645b39dbffaa088da4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healthValueDelta: -10
-  _destroyOnInteract: 1
 --- !u!1 &2956569249039247369
 GameObject:
   m_ObjectHideFlags: 0

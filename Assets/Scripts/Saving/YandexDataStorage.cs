@@ -8,8 +8,12 @@ public class YandexDataStorage : MonoBehaviour, IDataStorage
 
     private void Start()
     {
+        YandexSDK.Instance.Authenticate();
+
         YandexSDK.Instance.UserDataReceivedEvent += LoadData;
         YandexSDK.Instance.WindowClosedEvent += UploadData;
+
+        YandexSDK.Instance.RequestUserData();
     }
 
     public void GetData<T>(string key, T objectT)

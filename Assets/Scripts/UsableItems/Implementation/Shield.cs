@@ -5,25 +5,25 @@ using UnityEngine;
 public class Shield : IUsableItem
 {
     private float _duration;
-    private readonly Character _character;
+    private readonly CharacterHealth characterHealth;
 
-    public Shield(Character character, Parameters parameters)
+    public Shield(CharacterHealth characterHealth, Parameters parameters)
     {
-        _character = character;
+        this.characterHealth = characterHealth;
         _duration = parameters.Duration;
     }
 
     public void Use()
     {
-        ShieldUp(_duration);
+        //ShieldUp(_duration);
     }
 
-    private async void ShieldUp(float duration)
-    {
-        _character.CanApplyDamage = false;
-        await Task.Delay((int)(duration * 1000));
-        _character.CanApplyDamage = true;
-    }
+    //private async void ShieldUp(float duration)
+    //{
+    //    characterHealth.CanApplyDamage = false;
+    //    await Task.Delay((int)(duration * 1000));
+    //    characterHealth.CanApplyDamage = true;
+    //}
 
     [Serializable]
     public class Parameters

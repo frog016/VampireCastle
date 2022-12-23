@@ -92,10 +92,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8954072972843740832}
   - component: {fileID: 8906344751240183809}
+  - component: {fileID: 8954072972843740862}
   - component: {fileID: 7154309143379440996}
   - component: {fileID: 6114918640048070904}
   - component: {fileID: 356236718735699026}
-  - component: {fileID: 8954072972843740862}
   m_Layer: 6
   m_Name: Character
   m_TagString: Untagged
@@ -130,6 +130,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d575359d50e9fd4d94ad95ebae5c8a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8954072972843740862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954072972843740835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e597d7dcae6faa247a27b91f7b28c422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7154309143379440996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b22318c550d1de54c879d3881f9ec87d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 15
 --- !u!50 &6114918640048070904
 Rigidbody2D:
   serializedVersion: 4
@@ -190,15 +202,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0
---- !u!114 &8954072972843740862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8954072972843740835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e597d7dcae6faa247a27b91f7b28c422, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -14,7 +14,7 @@ public class GameResultHandler : MonoBehaviour
 
     private void GameOver()
     {
-        if (_timer.CurrentTime > 0)
+        if (_timer.CurrentTime > 1e-5)
             return;
 
         FindObjectOfType<GameOverPanel>(true).OpenPanel();

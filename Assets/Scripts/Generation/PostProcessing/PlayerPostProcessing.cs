@@ -6,12 +6,12 @@ using Zenject;
 [CreateAssetMenu(menuName = "Edgar/Post processing/Player", fileName = "PlayerPostProcessing")]
 public class PlayerPostProcessing : DungeonGeneratorPostProcessingGrid2D
 {
-    private Character _character;
+    private CharacterHealth characterHealth;
 
     [Inject]
-    public void Initialize(Character character)
+    public void Initialize(CharacterHealth characterHealth)
     {
-        _character = character;
+        this.characterHealth = characterHealth;
     }
 
     public override void Run(DungeonGeneratorLevelGrid2D level)
@@ -22,8 +22,8 @@ public class PlayerPostProcessing : DungeonGeneratorPostProcessingGrid2D
 
     private void MovePlayerInPosition(Vector2 position)
     {
-        _character.transform.position = position;
-        _character.GetComponentInChildren<Rigidbody2D>().velocity = Vector2.zero;
+        characterHealth.transform.position = position;
+        characterHealth.GetComponentInChildren<Rigidbody2D>().velocity = Vector2.zero;
     }
 
     private static Vector2 GetStartPosition(DungeonGeneratorLevelGrid2D level)

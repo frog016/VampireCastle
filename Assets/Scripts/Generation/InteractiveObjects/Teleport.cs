@@ -33,7 +33,7 @@ public class Teleport : InteractiveObject, IDependenteable
 
     private void OnTriggerExit2D(Collider2D otherCollider)
     {
-        if (otherCollider.GetComponent<Character>() == null)
+        if (otherCollider.GetComponent<CharacterHealth>() == null)
             return;
 
         IsActive = true;

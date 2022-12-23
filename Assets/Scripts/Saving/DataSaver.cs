@@ -6,9 +6,16 @@ public class DataSaver : MonoBehaviour
     
     private IDataStorage _dataStorage;
 
+    private static DataSaver _instance;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        if (_instance == null)
+            _instance = this;
+        else
+            Destroy(gameObject);
+
         _dataStorage = GetComponent<IDataStorage>();
     }
 

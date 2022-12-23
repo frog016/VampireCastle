@@ -91,8 +91,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 607131577317986648}
-  - component: {fileID: 6378106447253881039}
   - component: {fileID: 3170890828244937336}
+  - component: {fileID: 6378106447253881039}
   m_Layer: 0
   m_Name: GoldenCoin
   m_TagString: Untagged
@@ -115,6 +115,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3170890828244937336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6087011816362739967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ca46994a54472f469b56de6e9a4a54b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destroyOnInteract: 1
+  _value: 1
 --- !u!58 &6378106447253881039
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -131,16 +145,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.35
---- !u!114 &3170890828244937336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6087011816362739967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ca46994a54472f469b56de6e9a4a54b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _value: 1
