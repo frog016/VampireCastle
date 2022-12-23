@@ -1,36 +1,29 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using UnityEngine;
 
-public class ConditionHandler
+public class ConditionHandler : MonoBehaviour
 {
-    private readonly ICondition[] _conditions;
-    private readonly List<Action> _tasks;
+    public event Action ConditionCompletedEvent;
 
-    public ConditionHandler(ICondition[] conditions)
+    private void OnEnable() => Subscribe();
+
+    private void OnDisable() => Unsubscribe();
+
+    private void Subscribe()
     {
-        _conditions = conditions;
-        ObserveConditions(_conditions);
-        _tasks = new List<Action>();
+        Window.WindowClosingEvent += CheckCondition;
     }
 
-    public void OnAllConditionsAreMet(Action action)
+    private void Unsubscribe()
     {
-        _tasks.Add(action);
+        Window.WindowClosingEvent -= CheckCondition;
     }
 
-    private void CheckConditions()
+    private void CheckCondition(int remainingCount)
     {
-        if (_conditions.Any(condition => !condition.IsConditionMet))
+        if (remainingCount > 0)
             return;
 
-        foreach (var task in _tasks)
-            task?.Invoke();
-    }
-
-    private void ObserveConditions(ICondition[] conditions)
-    {
-        foreach (var condition in conditions)
-            condition.OnConditionMet += CheckConditions;
+        ConditionCompletedEvent?.Invoke();
     }
 }
