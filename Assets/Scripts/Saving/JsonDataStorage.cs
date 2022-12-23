@@ -2,9 +2,9 @@
 
 public class JsonDataStorage : MonoBehaviour, IDataStorage
 {
-    private void OnEnable()
-    {
-    }
+    public bool IsPrepared { get; private set; }
+
+    private void OnEnable() => IsPrepared = true;
 
     public void GetData<T>(string key, T objectT)
     {
@@ -16,4 +16,6 @@ public class JsonDataStorage : MonoBehaviour, IDataStorage
     {
         JSONSerializationHelper.SaveObjectToJson(key, objectT);
     }
+
+    private void OnDisable() => IsPrepared = false;
 }

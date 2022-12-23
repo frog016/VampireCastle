@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class DataSaver : MonoBehaviour
@@ -19,15 +21,25 @@ public class DataSaver : MonoBehaviour
         _dataStorage = GetComponent<IDataStorage>();
     }
 
-    private void OnEnable()
+    private void OnEnable() => StartCoroutine(WaitUnitPreparedCoroutine(Load));
+
+    private void OnApplicationQuit() => Unload();
+
+    private void Load()
     {
         foreach (var savableScriptableObject in _savableScriptableObjects)
             savableScriptableObject.LoadData(_dataStorage);
     }
 
-    private void OnApplicationQuit()
+    private void Unload()
     {
         foreach (var savableScriptableObject in _savableScriptableObjects)
             savableScriptableObject.SaveData(_dataStorage);
+    }
+
+    private IEnumerator WaitUnitPreparedCoroutine(Action action)
+    {
+        yield return new WaitUntil(() => _dataStorage.IsPrepared);
+        action();
     }
 }

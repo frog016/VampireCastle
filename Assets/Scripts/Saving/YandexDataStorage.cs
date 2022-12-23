@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class YandexDataStorage : MonoBehaviour, IDataStorage
 {
+    public bool IsPrepared { get; private set; }
+
     private readonly Dictionary<string, string> _temporaryStorage = new Dictionary<string, string>();
 
     private void Start()
@@ -33,6 +35,8 @@ public class YandexDataStorage : MonoBehaviour, IDataStorage
         var parsedData = JSON.Parse(data);
         foreach (var dataKey in parsedData.Keys)
             _temporaryStorage[dataKey] = parsedData[dataKey];
+
+        IsPrepared = true;
     }
 
     private void UploadData()

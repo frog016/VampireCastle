@@ -17,7 +17,7 @@ public class GameOverPanel : PanelBase // TODO: Refactoring this
         _bestScoreText.text = "Лучший счет: " + _statistic.BestScore;
         var value = (int)((_generator.CurrentLevel - 1) * 1.5f);
         _moneyWallet.AddMoney(value);
-        //_moneyText.text = "+ " + value + "     <voffset=0.25em> <size=20> <sprite=0> </size> </voffset>";
+        _moneyText.text = "+ " + value + "     <voffset=0.25em> <size=20> <sprite=0> </size> </voffset>";
         base.OpenPanel();
     }
 
