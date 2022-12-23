@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "com.k0fe.yandexgamessdk": {
-      "version": "file:D:/Downloads/yandex-games-plugin-unity-master/yandex-games-plugin-unity-master",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {}
-    },
     "com.unity.2d.animation": {
       "version": "5.0.7",
       "depth": 0,
