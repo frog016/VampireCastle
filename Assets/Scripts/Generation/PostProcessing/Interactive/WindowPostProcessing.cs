@@ -1,3 +1,4 @@
+using Edgar.Unity;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -5,6 +6,13 @@ using UnityEngine.Tilemaps;
 public class WindowPostProcessing : InteractiveObjectsPostProcessing
 {
     private Vector2 _direction;
+    private bool _isImportantUsed;
+
+    public override void Run(DungeonGeneratorLevelGrid2D level)
+    {
+        _isImportantUsed = false;
+        base.Run(level);
+    }
 
     protected override GameObject[] SpawnInteractiveObjects(Tilemap tilemap, GameObject interactiveObject)
     {
@@ -22,6 +30,14 @@ public class WindowPostProcessing : InteractiveObjectsPostProcessing
     {
         var positions = _map.GetFreePositions();
         var position = positions[UnityEngine.Random.Range(0, positions.Length)];
+
+        var positionValidator = tilemap.transform.parent.parent.GetComponentInChildren<PositionValidator>();
+        if (!_isImportantUsed && positionValidator != null && positionValidator.TryGetImportantPosition(out var value))
+        {
+            position = value;
+            _isImportantUsed = true;
+        }
+        
         var projection = (Vector2)tilemap.LocalToWorld(tilemap.cellBounds.GetPointProjection(tilemap.WorldToLocal(position)));
 
         var cellSize = tilemap.layoutGrid.cellSize.x;
