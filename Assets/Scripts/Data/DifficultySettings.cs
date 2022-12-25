@@ -25,9 +25,6 @@ public class DifficultySettings : ScriptableObject
             var data = _difficultyParameters
                 .TakeWhile(p => level >= p.LevelNumber)
                 .Last().ParameterValue;
-            //var data = _difficultyParameters.FirstOrDefault(p => p.LevelNumber == level)?.ParameterValue;
-            //if (!data.HasValue)
-            //    return;
 
             (_configurable as IConfigurable<float>)?.Configure(data);
         }
