@@ -2,8 +2,8 @@ using Edgar.Unity;
 using System.Linq;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Edgar/Post processing/Secrete", fileName = "SecretePostProcessing")]
-public class SecretePostProcessing : DungeonGeneratorPostProcessingGrid2D
+[CreateAssetMenu(menuName = "Edgar/Post processing/Dependenteable", fileName = "DependenteablePostProcessing")]
+public class DependenteablePostProcessing : DungeonGeneratorPostProcessingGrid2D
 {
     public override void Run(DungeonGeneratorLevelGrid2D level)
     {

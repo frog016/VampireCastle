@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afbc981a2fc77d44fac103c0068f0799, type: 3}
-  m_Name: SecretePostProcessing
+  m_Name: DependentablePostProcessing
   m_EditorClassIdentifier: 

@@ -15,4 +15,5 @@ MonoBehaviour:
   _graphConfig:
     LevelGraph: {fileID: 11400000, guid: 72e6eb51ac1c11c4e9d2da804df8adf3, type: 2}
     UseCorridors: 0
-  _additionalPostProcessingTasks: []
+  _additionalPostProcessingTasks:
+  - {fileID: 11400000, guid: e93be5a4affc6314ab257dd8b34e08e1, type: 2}

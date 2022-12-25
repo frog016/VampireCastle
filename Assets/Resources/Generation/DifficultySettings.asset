@@ -74,7 +74,7 @@ MonoBehaviour:
     - _levelNumber: 1
       _parameterValue: 1
     - _levelNumber: 2
-      _parameterValue: 2
+      _parameterValue: 1
     - _levelNumber: 5
       _parameterValue: 1
     - _levelNumber: 10

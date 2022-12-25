@@ -16,6 +16,8 @@ MonoBehaviour:
   Name: FullRoom
   IndividualRoomTemplates:
   - {fileID: 5531090724779163581, guid: ef174a040805b7e4bbfc7dc38aba4688, type: 3}
+  - {fileID: 5531090724779163581, guid: 01cb49f36724aef42868a92932916723, type: 3}
+  - {fileID: 5531090724779163581, guid: 7a9a2b4b6ea5162419152a2953b64535, type: 3}
   RoomTemplateSets: []
 --- !u!114 &11400000
 MonoBehaviour:
@@ -37,7 +39,7 @@ MonoBehaviour:
   Rooms:
   - {fileID: -7614548382011290477}
   EditorData:
-    PanOffset: {x: 0, y: 0}
-    Zoom: 1
+    PanOffset: {x: -201.35295, y: -200.52492}
+    Zoom: 1.5470495
   RoomType: Edgar.Unity.Room
   ConnectionType: Edgar.Unity.Connection

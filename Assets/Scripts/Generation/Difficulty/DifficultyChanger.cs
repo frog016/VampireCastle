@@ -14,10 +14,10 @@ public class DifficultyChanger : MonoBehaviour
 
     private void ChangeDifficultParameters(int level)
     {
-        _settings.TryConfigureAll(level % _generator.NumberLevelsToChangeGenerator);    //TODO: Спросить у Саши про этот момент
+        _settings.TryConfigureAll(level);
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         if (_generator != null)
             _generator.OnLevelPreGenerated -= ChangeDifficultParameters;
