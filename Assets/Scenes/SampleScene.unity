@@ -1272,6 +1272,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3820464255668979610, guid: 839f7de1393d7d746b39a94c1cce1774, type: 3}
+      propertyPath: _numberLevelsToChangeGenerator
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5700496695051012985, guid: 839f7de1393d7d746b39a94c1cce1774, type: 3}
       propertyPath: m_Name
       value: Generator

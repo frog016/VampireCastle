@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71dbf96985ae1e4d9396771587dc667, type: 3}
   m_Name: GoldenMoneyWallet
   m_EditorClassIdentifier: 
-  _balance: 0
+  _balance: 2296

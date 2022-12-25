@@ -16,6 +16,7 @@ MonoBehaviour:
   Name: Left part
   IndividualRoomTemplates:
   - {fileID: 2966564906174274022, guid: 58653300ee18aea45a63d852f0629bc7, type: 3}
+  - {fileID: 2966564906174274022, guid: e28570266744ade4f95643acca0d25a1, type: 3}
   RoomTemplateSets: []
 --- !u!114 &-7733636702062489313
 MonoBehaviour:
@@ -33,6 +34,7 @@ MonoBehaviour:
   Name: Right part
   IndividualRoomTemplates:
   - {fileID: 2966564906174274022, guid: 9df7ad803c743eb45813a224a3c6c9f0, type: 3}
+  - {fileID: 2966564906174274022, guid: 048170422e7d60745926d026abddf5bb, type: 3}
   RoomTemplateSets: []
 --- !u!114 &11400000
 MonoBehaviour:
@@ -56,8 +58,8 @@ MonoBehaviour:
   - {fileID: -7733636702062489313}
   - {fileID: -8994794166430204865}
   EditorData:
-    PanOffset: {x: -2.7147644, y: -237.32945}
-    Zoom: 1.3923446
+    PanOffset: {x: -82.04467, y: -298.72775}
+    Zoom: 1.684737
   RoomType: Edgar.Unity.Room
   ConnectionType: Edgar.Unity.Connection
 --- !u!114 &4720433088880365688
