@@ -1,17 +1,19 @@
-using System;
 using UnityEngine;
 
 public abstract class MoneyWallet : SavableScriptableObject
 {
-    [SerializeField] protected float _balance;
+    [SerializeField] private float _balance;
 
-    public float Balance => _balance;
-    public event Action<float> OnBalanceUpdatedEvent;
+    public readonly ObservableVariable<float> Balance = new ObservableVariable<float>();
+
+    private void OnValidate()
+    {
+        Balance.Value = _balance;
+    }
 
     public void AddMoney(float value)
     {
-        _balance += value;
-        OnBalanceUpdatedEvent?.Invoke(_balance);
+        Balance.Value += value;
     }
 
     public bool TrySpendMoney(float value)
@@ -19,10 +21,14 @@ public abstract class MoneyWallet : SavableScriptableObject
         if (!IsEnough(value))
             return false;
 
-        _balance -= value;
-        OnBalanceUpdatedEvent?.Invoke(_balance);
+        Balance.Value += value;
         return true;
     }
 
     public bool IsEnough(float value) => _balance >= value;
+
+    public override void OnAfterDeserialize()
+    {
+        Balance.Value = _balance;
+    }
 }

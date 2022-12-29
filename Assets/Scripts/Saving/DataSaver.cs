@@ -21,21 +21,22 @@ public class DataSaver : MonoBehaviour
         _dataStorage = GetComponent<IDataStorage>();
     }
 
-    private void OnEnable() => StartCoroutine(WaitUnitPreparedCoroutine(Load));
 
-    private void OnApplicationQuit() => Unload();
+    private void OnEnable() => StartCoroutine(WaitUnitPreparedCoroutine(ReceiveData));
 
-    private void Load()
+    public void ReceiveData()
     {
         foreach (var savableScriptableObject in _savableScriptableObjects)
             savableScriptableObject.LoadData(_dataStorage);
     }
 
-    private void Unload()
+    public void SaveData()
     {
         foreach (var savableScriptableObject in _savableScriptableObjects)
             savableScriptableObject.SaveData(_dataStorage);
     }
+
+    private void OnApplicationQuit() => SaveData();
 
     private IEnumerator WaitUnitPreparedCoroutine(Action action)
     {

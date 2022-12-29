@@ -23,7 +23,7 @@ public class PlayerPostProcessing : DungeonGeneratorPostProcessingGrid2D
     private void MovePlayerInPosition(Vector2 position)
     {
         characterHealth.transform.position = position;
-        characterHealth.GetComponentInChildren<Rigidbody2D>().velocity = Vector2.zero;
+        characterHealth.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 
     private static Vector2 GetStartPosition(DungeonGeneratorLevelGrid2D level)

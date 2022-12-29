@@ -34,7 +34,10 @@ public class YandexDataStorage : MonoBehaviour, IDataStorage
     {
         var parsedData = JSON.Parse(data);
         foreach (var dataKey in parsedData.Keys)
+        {
+            Debug.Log($"Key: {dataKey}, Value: {parsedData[dataKey]}");
             _temporaryStorage[dataKey] = parsedData[dataKey];
+        }
 
         IsPrepared = true;
     }

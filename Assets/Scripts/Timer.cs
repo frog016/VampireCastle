@@ -22,13 +22,10 @@ public class Timer : MonoBehaviour, IConfigurable<float>
 
     private void Update()
     {
-        var delta = _isActive ? Time.deltaTime : 0;
+        if (!_isActive)
+            return;
 
-        CurrentTime -= _tickSpeed * delta;
-        OnTimerTickEvent?.Invoke();
-
-        if (CurrentTime < 1e-5)
-            StopTimer();
+        Tick();
     }
 
     public void Configure(float value)
@@ -49,5 +46,15 @@ public class Timer : MonoBehaviour, IConfigurable<float>
     public void RestartTimer()
     {
         CurrentTime = MaxTime;
+    }
+
+    private void Tick()
+    {
+        var deltaTime = Time.deltaTime;
+        CurrentTime = Mathf.Max(CurrentTime - _tickSpeed * deltaTime, 0);
+        OnTimerTickEvent?.Invoke();
+
+        if (CurrentTime < 1e-5)
+            StopTimer();
     }
 }

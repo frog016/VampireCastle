@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class SavableScriptableObject : ScriptableObject
+public abstract class SavableScriptableObject : ScriptableObject, ISerializationCallbackReceiver
 {
     public void LoadData(IDataStorage dataStorage)
     {
@@ -11,4 +11,8 @@ public abstract class SavableScriptableObject : ScriptableObject
     {
         dataStorage.SaveData(GetType().Name, this);
     }
+
+    public void OnBeforeSerialize() { }
+
+    public abstract void OnAfterDeserialize();
 }

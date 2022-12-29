@@ -1,24 +1,13 @@
+using System;
+using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-using Zenject;
 
-public abstract class PanelBase : TextChanger
+public abstract class PanelBase : MonoBehaviour
 {
-    private string _startText;
-    private MapGenerator _generation;
-
     protected virtual void Start()
     {
-        _startText = _text.text;
-
-        ChangeText(_generation.CurrentLevel);
-        _generation.OnLevelPreGenerated += ChangeText;
         ClosePanel();
-    }
-
-    [Inject]
-    public void Initialize(MapGenerator generation)
-    {
-        _generation = generation;
     }
 
     public virtual void OpenPanel()
@@ -33,14 +22,21 @@ public abstract class PanelBase : TextChanger
         PauseManager.Continue();
     }
 
-    public override void ChangeText(string text)
-    {
-        base.ChangeText(_startText + text);
-    }
-
     public void ReturnToMenu()
     {
         PauseManager.Continue();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    [Serializable]
+    public class TextField
+    {
+        [SerializeField] private string _placeholder;
+        [SerializeField] private TextMeshProUGUI _textDisplay;
+
+        public void ChangeText(string value)
+        {
+            _textDisplay.text = string.Format(_placeholder, value);
+        }
     }
 }

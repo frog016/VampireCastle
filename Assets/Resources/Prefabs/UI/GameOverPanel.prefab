@@ -29,7 +29,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7747690838213377258}
   - {fileID: 7747690838779135193}
@@ -38,7 +37,7 @@ RectTransform:
   - {fileID: 7747690838835715434}
   - {fileID: 7747690838230085241}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -95,11 +94,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa7bc09b1931fb4c83dfe85baf94df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreText: {fileID: 7747690838779135192}
-  _shadowPanel: {fileID: 0}
-  _pauseButton: {fileID: 0}
+  _finaleScoreText: {fileID: 7747690838779135192}
   _bestScoreText: {fileID: 7747690838789124458}
   _moneyText: {fileID: 7747690838230085240}
+  _generator: {fileID: 0}
+  _statistic: {fileID: 0}
+  _moneyWallet: {fileID: 0}
 --- !u!1 &7747690838213377259
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,7 +128,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7747690837644061525}
   m_RootOrder: 0
@@ -208,7 +207,6 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7747690837644061525}
   m_RootOrder: 5
@@ -343,7 +341,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7747690837644061525}
   m_RootOrder: 1
@@ -394,8 +391,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0422\u0435\u043A\u0443\u0449\u0438\u0439 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442:
-    2"
+  m_Text: "\u0422\u0435\u043A\u0443\u0449\u0438\u0439 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442: "
 --- !u!1 &7747690838789124460
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +420,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7747690837644061525}
   m_RootOrder: 2
@@ -506,7 +501,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7747690837644061525}
   m_RootOrder: 4
@@ -639,7 +633,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7747690837644061525}
   m_RootOrder: 3

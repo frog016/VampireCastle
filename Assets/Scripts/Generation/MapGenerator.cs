@@ -3,7 +3,7 @@ using Edgar.Unity;
 using UnityEngine;
 using Zenject;
 
-[RequireComponent(typeof(DungeonGeneratorGrid2D), typeof(ConditionHandler))]
+[RequireComponent(typeof(DungeonGeneratorGrid2D))]
 public class MapGenerator : MonoBehaviour
 {
     [SerializeField] private int _numberLevelsToChangeGenerator;
@@ -19,16 +19,15 @@ public class MapGenerator : MonoBehaviour
     private void Start()
     {
         _generator = GetComponent<DungeonGeneratorGrid2D>();
-        _conditionHandler = GetComponent<ConditionHandler>();
-        _conditionHandler.ConditionCompletedEvent += GenerateNextLevel;
-
         GenerateNextLevel();
     }
 
     [Inject]
-    public void Initialize(GeneratorProvider provider)
+    public void Initialize(GeneratorProvider provider, ConditionHandler conditionHandler)
     {
         _provider = provider;
+        _conditionHandler = conditionHandler;
+        _conditionHandler.ConditionCompletedEvent += GenerateNextLevel;
     }
 
     public void GenerateLevel(int level)

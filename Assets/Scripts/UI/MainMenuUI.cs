@@ -14,8 +14,8 @@ public class MainMenuUI : MonoBehaviour
         _statistic.BestScore.ValueChangedEvent += ChangeScoreText;
         ChangeScoreText(_statistic.BestScore.Value);
 
-        _moneyWallet.OnBalanceUpdatedEvent += ChangeMoneyText;
-        ChangeMoneyText(_moneyWallet.Balance);
+        _moneyWallet.Balance.ValueChangedEvent += ChangeMoneyText;
+        ChangeMoneyText(_moneyWallet.Balance.Value);
     }
 
     private void ChangeScoreText(int value)
@@ -41,6 +41,6 @@ public class MainMenuUI : MonoBehaviour
     private void OnDisable()
     {
         _statistic.BestScore.ValueChangedEvent -= ChangeScoreText;
-        _moneyWallet.OnBalanceUpdatedEvent -= ChangeMoneyText;
+        _moneyWallet.Balance.ValueChangedEvent -= ChangeMoneyText;
     }
 }
