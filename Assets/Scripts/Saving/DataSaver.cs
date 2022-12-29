@@ -36,7 +36,7 @@ public class DataSaver : MonoBehaviour
             savableScriptableObject.SaveData(_dataStorage);
     }
 
-    private void OnApplicationQuit() => SaveData();
+    private void OnDisable() => SaveData();
 
     private IEnumerator WaitUnitPreparedCoroutine(Action action)
     {
