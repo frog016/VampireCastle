@@ -17,6 +17,8 @@ MonoBehaviour:
   IndividualRoomTemplates:
   - {fileID: 2966564906174274022, guid: 58653300ee18aea45a63d852f0629bc7, type: 3}
   - {fileID: 2966564906174274022, guid: e28570266744ade4f95643acca0d25a1, type: 3}
+  - {fileID: 2966564906174274022, guid: 45b9f79461d04e846a9886f11b1be8e3, type: 3}
+  - {fileID: 2966564906174274022, guid: 8e45794a76011584492d7bb4605ed5e6, type: 3}
   RoomTemplateSets: []
 --- !u!114 &-7733636702062489313
 MonoBehaviour:
@@ -35,6 +37,8 @@ MonoBehaviour:
   IndividualRoomTemplates:
   - {fileID: 2966564906174274022, guid: 9df7ad803c743eb45813a224a3c6c9f0, type: 3}
   - {fileID: 2966564906174274022, guid: 048170422e7d60745926d026abddf5bb, type: 3}
+  - {fileID: 2966564906174274022, guid: 9328e84a68e839641abeb9c4c90670c2, type: 3}
+  - {fileID: 2966564906174274022, guid: dc12c43f1aab4b546a44094bc5b0feba, type: 3}
   RoomTemplateSets: []
 --- !u!114 &11400000
 MonoBehaviour:
