@@ -10,4 +10,9 @@ public class OpenableWall : MonoBehaviour, IDependenteable
             throw new InvalidCastException(
                 $"{otherDependenteable} is not {nameof(PressurePlate)}. Can't cast first to second.");
     }
+
+    public void DestroyDoor()
+    {
+        Destroy(gameObject);
+    }
 }

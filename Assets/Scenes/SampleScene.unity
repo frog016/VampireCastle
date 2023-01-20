@@ -1896,6 +1896,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScreenShader
       objectReference: {fileID: 0}
+    - target: {fileID: 3397246823063092541, guid: 1066096d7a117a8488745918d65deec3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1066096d7a117a8488745918d65deec3, type: 3}
 --- !u!224 &1384259523 stripped

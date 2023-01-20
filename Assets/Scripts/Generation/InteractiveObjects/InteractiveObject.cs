@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider2D))]
 public abstract class InteractiveObject : MonoBehaviour
 {
     [SerializeField] private bool _destroyOnInteract;
+    [SerializeField] private UnityEvent _interactEventEditorOnly;
 
     protected abstract void Interact(GameObject triggeredObject);
 
@@ -18,6 +20,7 @@ public abstract class InteractiveObject : MonoBehaviour
             return;
 
         Interact(otherCollider.gameObject);
+        _interactEventEditorOnly?.Invoke();
 
         if (_destroyOnInteract)
             Destroy();

@@ -25,4 +25,13 @@ public class PressurePlate : InteractiveObject, IDependenteable
 
         _target = dependable;
     }
+
+    public void DestroyDoor()
+    {
+        if (_target != null)
+        {
+            _target.GetComponent<Collider2D>().enabled = false;
+            _target.GetComponentInChildren<Animation>().Play();
+        }
+    }
 }
