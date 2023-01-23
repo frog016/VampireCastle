@@ -6,8 +6,6 @@ public class CharacterController : MonoBehaviour
     private IInputSystem _inputSystem;
     private IMovement _movement;
 
-    private Vector3 _direction;
-
     private void Awake()
     {
         _movement = GetComponent<IMovement>();
@@ -16,15 +14,7 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
-        _direction = _inputSystem.GetMoveDirection().normalized;
-    }
-
-    private void FixedUpdate()
-    {
-        if (_direction.magnitude < 1e-5)
-            return;
-
-        _movement.Move(_direction);
+        _movement.Move(_inputSystem.GetMoveDirection().normalized);
     }
 
     private IInputSystem GetInputSystem()

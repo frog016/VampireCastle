@@ -7,6 +7,8 @@ public class LoiteringMovement : MonoBehaviour, IMovement
     [SerializeField] private float _speed;
     [SerializeField] private Vector2 _oneDirectionTimeInterval;
 
+    public bool CanMove { get; }
+
     private bool _isMoving;
     private Rigidbody2D _rigidbody;
 

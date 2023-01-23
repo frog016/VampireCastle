@@ -15,9 +15,16 @@ public class SlidingMovement : MonoBehaviour, IMovement
     public void Move(Vector2 direction)
     {
         if (_rigidbody.velocity.magnitude > 1e-3)
+        {
             return;
+        }
 
         _rigidbody.velocity = direction * _speed;
         transform.rotation = Quaternion.Euler(0, Quaternion.FromToRotation(Vector3.right, direction).eulerAngles.y, 0);
+    }
+
+    public void StopMoving()
+    {
+        _rigidbody.velocity = Vector2.zero;
     }
 }

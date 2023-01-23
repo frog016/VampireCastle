@@ -19,6 +19,7 @@ public class Teleport : InteractiveObject, IDependenteable
 
         _otherTeleport.IsActive = false;
         triggeredObject.transform.position = _otherTeleport.transform.position;
+        triggeredObject.GetComponent<SlidingMovement>().StopMoving();
     }
 
     public void InitializeDependency(IDependenteable otherDependenteable)
